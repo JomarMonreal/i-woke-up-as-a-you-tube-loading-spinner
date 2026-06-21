@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c0f1nurtyvh3u"]
+
+[ext_resource type="Script" uid="uid://dyqn2q1dxuhun" path="res://objects/loading.gd" id="1_xm37p"]
+[ext_resource type="PackedScene" uid="uid://cutjwce0j1mys" path="res://objects/anomaly.tscn" id="2_f7qcg"]
+[ext_resource type="Texture2D" uid="uid://5n4r8mlaykow" path="res://assets/sprites/loading.png" id="2_jsmtt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_02mon"]
+radius = 48.0
+
+[node name="Loading" type="Node2D" unique_id=1013962079]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_xm37p")
+anomaly = ExtResource("2_f7qcg")
+max_anomaly_count = 3
+radius = 113.0
+metadata/_edit_horizontal_guides_ = [-32.0]
+
+[node name="Spinner" type="Area2D" parent="." unique_id=703190748]
+scale = Vector2(0.25, 0.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="Spinner" unique_id=1588507197]
+texture = ExtResource("2_jsmtt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spinner" unique_id=1096628040]
+position = Vector2(432, -64)
+shape = SubResource("CircleShape2D_02mon")

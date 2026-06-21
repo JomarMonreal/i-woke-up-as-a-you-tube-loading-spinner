@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://w1y6ybc6agoa"]
+
+[ext_resource type="Texture2D" uid="uid://bc4yli5h2xybd" path="res://assets/sprites/white.png" id="1_15jot"]
+[ext_resource type="Script" uid="uid://qjsm1ybxo1r6" path="res://objects/explosion.gd" id="2_m0kxi"]
+
+[sub_resource type="Curve" id="Curve_cbffv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Explosion" type="CPUParticles2D" unique_id=2043430673]
+emitting = false
+amount = 12
+texture = ExtResource("1_15jot")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, 0)
+spread = 153.44
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 0.05
+scale_amount_max = 0.25
+scale_amount_curve = SubResource("Curve_cbffv")
+script = ExtResource("2_m0kxi")

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c6plbgwb8qexb"]
+
+[ext_resource type="Texture2D" uid="uid://b0cfl5kr2pmn2" path="res://assets/sprites/backgorund.png" id="1_oe8ih"]
+[ext_resource type="Script" uid="uid://8mhbfe2qfhoq" path="res://gameplay.gd" id="1_smepj"]
+[ext_resource type="Texture2D" uid="uid://col3scr8ssc61" path="res://assets/sprites/black_screen.png" id="2_xuee5"]
+[ext_resource type="PackedScene" uid="uid://c0f1nurtyvh3u" path="res://objects/loading.tscn" id="3_cbffv"]
+[ext_resource type="Texture2D" uid="uid://c5hflu0qkgaij" path="res://assets/sprites/computer.png" id="3_smepj"]
+[ext_resource type="Script" uid="uid://bymgaxsdbvrvf" path="res://main_ui.gd" id="6_cbffv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_smepj"]
+font_size = 32
+
+[node name="Gameplay" type="Node2D" unique_id=2037950974]
+script = ExtResource("1_smepj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1707255845]
+offset = Vector2(450, -100)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Background2" type="Sprite2D" parent="." unique_id=458975056]
+texture = ExtResource("1_oe8ih")
+
+[node name="BlackScreen" type="Sprite2D" parent="." unique_id=1397778512]
+position = Vector2(373.1389, -158.24998)
+scale = Vector2(0.49694732, 0.46874997)
+texture = ExtResource("2_xuee5")
+
+[node name="Loading" parent="." unique_id=128827170 instance=ExtResource("3_cbffv")]
+position = Vector2(400, -183)
+scale = Vector2(1, 1)
+
+[node name="Desktop" type="Sprite2D" parent="." unique_id=2082037652]
+texture = ExtResource("3_smepj")
+
+[node name="MainUI" type="CanvasLayer" parent="." unique_id=1477824664]
+script = ExtResource("6_cbffv")
+
+[node name="Control" type="Control" parent="MainUI" unique_id=1554447120]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainUI/Control" unique_id=1794574930]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Early"
+label_settings = SubResource("LabelSettings_smepj")
+horizontal_alignment = 2
+
+[connection signal="cleared_anomaly" from="Loading" to="MainUI" method="_on_loading_cleared_anomaly"]

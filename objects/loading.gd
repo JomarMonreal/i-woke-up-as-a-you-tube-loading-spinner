@@ -32,6 +32,9 @@ var closest_visible_anomaly = null
 signal cleared_anomaly(timing: Timing)
 signal pressed_wrong_color
 
+func increase_speed(speed: float) -> void:
+	rotation_speed += speed
+
 func clear_anomaly(anomaly: Anomaly):
 	var sprite_scale = anomaly.sprite_scale
 	var has_been_passed = anomaly.has_been_pased
@@ -46,6 +49,7 @@ func clear_anomaly(anomaly: Anomaly):
 		return Timing.Good
 	else:
 		return Timing.Perfect
+	
 
 func spwan_anomaly_at_border():
 	var possible_degrees = range(0,360,steps)
@@ -66,11 +70,6 @@ func spwan_anomaly_at_border():
 		anomalies_dictionary[i] = anomaly_instance
 		add_child(anomaly_instance)
 		move_child(anomaly_instance, 0)
-	
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	spwan_anomaly_at_border()
-	
 
 func _process(delta: float) -> void:
 	# distance calculation

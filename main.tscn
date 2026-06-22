@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://jr3rn6nak24x"]
+
+[ext_resource type="Script" uid="uid://dju78ukb6wlmu" path="res://game_manager/game_manager.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://bpwknrqltt28b" path="res://game_manager/game_manager_state_manager.gd" id="2_7mycd"]
+[ext_resource type="Script" uid="uid://b077hbe8kdyva" path="res://game_manager/game_manager_loading.gd" id="3_272bh"]
+[ext_resource type="Script" uid="uid://dvuj3qimtse0n" path="res://game_manager/game_manager_main_menu.gd" id="4_5vw27"]
+[ext_resource type="PackedScene" uid="uid://4dlydv7w45d2" path="res://loading.tscn" id="4_kek77"]
+[ext_resource type="PackedScene" uid="uid://poj2ymoe5det" path="res://main_menu.tscn" id="5_272bh"]
+[ext_resource type="Script" uid="uid://b71r4j54uha5q" path="res://game_manager/game_manager_prototype.gd" id="5_kek77"]
+[ext_resource type="PackedScene" uid="uid://c6plbgwb8qexb" path="res://gameplay.tscn" id="7_5vw27"]
+
+[node name="Main" type="Node2D" unique_id=1027041361]
+script = ExtResource("1_lquwl")
+
+[node name="StateManager" type="Node2D" parent="." unique_id=894109473]
+script = ExtResource("2_7mycd")
+
+[node name="Loading" type="Node2D" parent="StateManager" unique_id=404578024]
+script = ExtResource("3_272bh")
+
+[node name="Timer" type="Timer" parent="StateManager/Loading" unique_id=1353052952]
+one_shot = true
+autostart = true
+
+[node name="Loading" parent="StateManager/Loading" unique_id=1601752481 instance=ExtResource("4_kek77")]
+
+[node name="MainMenu" type="Node2D" parent="StateManager" unique_id=1494808632]
+script = ExtResource("4_5vw27")
+
+[node name="MainMenu" parent="StateManager/MainMenu" unique_id=107323356 instance=ExtResource("5_272bh")]
+
+[node name="Prototype" type="Node2D" parent="StateManager" unique_id=1024326708]
+script = ExtResource("5_kek77")
+
+[node name="Gameplay" parent="StateManager/Prototype" unique_id=2037950974 instance=ExtResource("7_5vw27")]
+
+[connection signal="timeout" from="StateManager/Loading/Timer" to="StateManager/Loading" method="_on_timer_timeout"]
+[connection signal="pressed_start" from="StateManager/MainMenu/MainMenu" to="StateManager/MainMenu" method="_on_main_menu_pressed_start"]

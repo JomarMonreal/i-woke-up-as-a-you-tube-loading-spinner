@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b0cfl5kr2pmn2" path="res://assets/sprites/backgorund.png" id="1_oe8ih"]
 [ext_resource type="Script" uid="uid://8mhbfe2qfhoq" path="res://gameplay.gd" id="1_smepj"]
-[ext_resource type="Texture2D" uid="uid://col3scr8ssc61" path="res://assets/sprites/black_screen.png" id="2_xuee5"]
-[ext_resource type="PackedScene" uid="uid://c0f1nurtyvh3u" path="res://objects/loading.tscn" id="3_cbffv"]
+[ext_resource type="Script" uid="uid://didr0y3rynqq1" path="res://camera.gd" id="2_fbudy"]
 [ext_resource type="Texture2D" uid="uid://c5hflu0qkgaij" path="res://assets/sprites/computer.png" id="3_smepj"]
+[ext_resource type="PackedScene" uid="uid://bdypuvoatfclt" path="res://objects/monitor/monitor.tscn" id="4_cbffv"]
 [ext_resource type="Script" uid="uid://bymgaxsdbvrvf" path="res://main_ui.gd" id="6_cbffv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_smepj"]
@@ -13,21 +13,15 @@ font_size = 32
 [node name="Gameplay" type="Node2D" unique_id=2037950974]
 script = ExtResource("1_smepj")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1707255845]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1707255845 groups=["camera"]]
 offset = Vector2(450, -100)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.3, 0.3)
+script = ExtResource("2_fbudy")
 
 [node name="Background2" type="Sprite2D" parent="." unique_id=458975056]
 texture = ExtResource("1_oe8ih")
 
-[node name="BlackScreen" type="Sprite2D" parent="." unique_id=1397778512]
-position = Vector2(373.1389, -158.24998)
-scale = Vector2(0.49694732, 0.46874997)
-texture = ExtResource("2_xuee5")
-
-[node name="Loading" parent="." unique_id=128827170 instance=ExtResource("3_cbffv")]
-position = Vector2(400, -183)
-scale = Vector2(1, 1)
+[node name="Monitor" parent="." unique_id=1991079730 instance=ExtResource("4_cbffv")]
 
 [node name="Desktop" type="Sprite2D" parent="." unique_id=2082037652]
 texture = ExtResource("3_smepj")
@@ -58,4 +52,4 @@ text = "Early"
 label_settings = SubResource("LabelSettings_smepj")
 horizontal_alignment = 2
 
-[connection signal="cleared_anomaly" from="Loading" to="MainUI" method="_on_loading_cleared_anomaly"]
+[connection signal="cleared_anomaly" from="Monitor" to="MainUI" method="_on_monitor_cleared_anomaly"]

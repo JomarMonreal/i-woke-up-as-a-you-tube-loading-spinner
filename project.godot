@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="I Woke Up as a YouTube Loading Spinner"
-run/main_scene="uid://c6plbgwb8qexb"
+run/main_scene="uid://jr3rn6nak24x"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+camera=""
 
 [input]
 

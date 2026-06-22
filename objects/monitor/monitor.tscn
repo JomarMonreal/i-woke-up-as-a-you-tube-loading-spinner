@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://bdypuvoatfclt"]
+
+[ext_resource type="Script" uid="uid://cxww3ov7b35mb" path="res://monitor.gd" id="1_rsw7j"]
+[ext_resource type="Texture2D" uid="uid://cdwvw6e8ievlw" path="res://assets/sprites/sample_vid.png" id="2_53u5w"]
+[ext_resource type="Texture2D" uid="uid://col3scr8ssc61" path="res://assets/sprites/black_screen.png" id="3_tjr77"]
+[ext_resource type="PackedScene" uid="uid://c0f1nurtyvh3u" path="res://objects/loading_spinner.tscn" id="4_q8qw6"]
+[ext_resource type="Script" uid="uid://002pyoemsmy6" path="res://objects/monitor/monitor_state_manager.gd" id="5_tjr77"]
+[ext_resource type="Script" uid="uid://dl2lfkdk5iv07" path="res://objects/monitor/monitor_playing.gd" id="6_q8qw6"]
+[ext_resource type="Script" uid="uid://bdtt77twb03av" path="res://objects/monitor/monitor_loading.gd" id="7_g471j"]
+[ext_resource type="Script" uid="uid://dno27o7dig4vt" path="res://objects/monitor/monitor_finished.gd" id="7_q8qw6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ihbs"]
+atlas = ExtResource("2_53u5w")
+region = Rect2(0, 0, 498, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qy1k"]
+atlas = ExtResource("2_53u5w")
+region = Rect2(498, 0, 498, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n40r"]
+atlas = ExtResource("2_53u5w")
+region = Rect2(996, 0, 498, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45aep"]
+atlas = ExtResource("2_53u5w")
+region = Rect2(1494, 0, 498, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyrfw"]
+atlas = ExtResource("2_53u5w")
+region = Rect2(1992, 0, 498, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eod45"]
+atlas = ExtResource("2_53u5w")
+region = Rect2(0, 277, 498, 277)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_02mon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ihbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qy1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n40r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45aep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyrfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eod45")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Theme" id="Theme_02mon"]
+
+[sub_resource type="DPITexture" id="DPITexture_0m7cd"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ihbs"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_0m7cd"]
+HSlider/icons/grabber = SubResource("DPITexture_0m7cd")
+HSlider/icons/grabber_disabled = SubResource("DPITexture_0m7cd")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_2ihbs")
+
+[node name="Monitor" type="Node2D" unique_id=1991079730]
+script = ExtResource("1_rsw7j")
+
+[node name="Video" type="AnimatedSprite2D" parent="." unique_id=367834459]
+position = Vector2(371.5, -206.99998)
+scale = Vector2(3.817269, 3.3646214)
+sprite_frames = SubResource("SpriteFrames_02mon")
+autoplay = "default"
+
+[node name="Screen" type="Sprite2D" parent="." unique_id=1418883244]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(374.63885, -196.5)
+scale = Vector2(0.49616608, 0.45416668)
+texture = ExtResource("3_tjr77")
+
+[node name="Overlay" type="Sprite2D" parent="Screen" unique_id=492980349]
+modulate = Color(1, 1, 1, 0.90588236)
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("3_tjr77")
+
+[node name="Control" type="Control" parent="Screen" unique_id=1903252331]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="BoxContainer" type="ColorRect" parent="Screen/Control" unique_id=1002908016]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -193.80273
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_02mon")
+color = Color(0.2909656, 0.2909656, 0.29096556, 1)
+
+[node name="ProgressBar" type="HSlider" parent="Screen/Control" unique_id=493933693]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1924.0415
+offset_top = 780.28125
+offset_right = -1154.9414
+offset_bottom = 821.29517
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme = SubResource("Theme_0m7cd")
+step = 0.01
+value = 50.0
+
+[node name="LoadingSpinner" parent="." unique_id=1013962079 instance=ExtResource("4_q8qw6")]
+position = Vector2(400, -183)
+scale = Vector2(1, 1)
+
+[node name="StateManager" type="Node2D" parent="." unique_id=1536444168]
+script = ExtResource("5_tjr77")
+
+[node name="Idle" type="Node2D" parent="StateManager" unique_id=1130010065]
+script = ExtResource("6_q8qw6")
+
+[node name="Playing" type="Node2D" parent="StateManager" unique_id=242978833]
+script = ExtResource("6_q8qw6")
+
+[node name="Loading" type="Node2D" parent="StateManager" unique_id=661155223]
+script = ExtResource("7_g471j")
+
+[node name="Finished" type="Node2D" parent="StateManager" unique_id=1827936316]
+script = ExtResource("7_q8qw6")
+
+[connection signal="cleared_anomaly" from="LoadingSpinner" to="." method="_on_loading_spinner_cleared_anomaly"]

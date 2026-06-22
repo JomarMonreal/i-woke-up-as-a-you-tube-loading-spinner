@@ -18,6 +18,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_loading_cleared_anomaly(timing: LoadingSpinner.Timing) -> void:
+func _on_monitor_cleared_anomaly(timing: Monitor.Timing) -> void:
 	var timing_string = Timing.keys()[timing]
 	timing_label.text = timing_string

@@ -9,6 +9,7 @@ enum AnomalyColor {
 }
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var camera: Camera2D = get_tree().get_first_node_in_group("camera")
 @export var explosion_effect: PackedScene
 @export var textures: Dictionary[AnomalyColor, Texture2D]
 @export var max_distance = 50.0
@@ -22,6 +23,8 @@ var has_been_pased = false
 var _previous_distance = INF
 
 func clear() -> void:
+	if camera:
+		camera.shake(0.4, 20.0)
 	set_process(false)
 	sprite_scale = 0
 	sprite.visible = false
@@ -36,6 +39,9 @@ func clear() -> void:
 			effect.color = Color.FOREST_GREEN
 		add_child(effect)
 		effect.global_position = global_position
+
+	var timer = get_tree().create_timer(1.0)
+	timer.timeout.connect(queue_free)
 		
 	
 # Called when the node enters the scene tree for the first time.

@@ -1,4 +1,5 @@
 extends Node2D
+class_name  Gameplay
 
 enum AnomalyColor {
 	Null,
@@ -14,10 +15,10 @@ enum Timing {
 	Late
 }
 
+@onready var main_ui: CanvasLayer = $MainUI
+@onready var monitor: Monitor = $Monitor
 @export var max_patience_level = 100
 var patience_level = 100
-
-@onready var loading_spinner: LoadingSpinner = $Loading
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

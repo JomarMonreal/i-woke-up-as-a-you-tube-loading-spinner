@@ -38,6 +38,8 @@
 [ext_resource type="PackedScene" uid="uid://dfeuhsbj71n6r" path="res://objects/text_effects/good.tscn" id="35_5a717"]
 [ext_resource type="PackedScene" uid="uid://3gdi21vv2edi" path="res://objects/text_effects/early.tscn" id="36_dsr22"]
 [ext_resource type="PackedScene" uid="uid://byxjs1o8vkahh" path="res://objects/text_effects/late.tscn" id="37_d8yap"]
+[ext_resource type="Script" uid="uid://c6wrdh3uxsqec" path="res://gameplay/gameplay_state_manager.gd" id="39_p5dy6"]
+[ext_resource type="Script" uid="uid://bsplpsxmt7xo1" path="res://gameplay/gameplay_playing.gd" id="40_o7tkd"]
 
 [sub_resource type="Animation" id="Animation_5a717"]
 length = 0.001
@@ -236,9 +238,11 @@ script = ExtResource("2_fbudy")
 [node name="Background2" type="Sprite2D" parent="." unique_id=458975056]
 texture = ExtResource("1_oe8ih")
 
-[node name="Monitor" parent="." unique_id=1991079730 instance=ExtResource("4_cbffv")]
+[node name="Desktop" type="Node2D" parent="." unique_id=1046719852]
 
-[node name="Desktop" type="Sprite2D" parent="." unique_id=2082037652]
+[node name="Monitor" parent="Desktop" unique_id=1991079730 instance=ExtResource("4_cbffv")]
+
+[node name="Desk" type="Sprite2D" parent="Desktop" unique_id=2082037652]
 texture = ExtResource("3_smepj")
 
 [node name="MainUI" type="CanvasLayer" parent="." unique_id=1477824664]
@@ -311,7 +315,15 @@ position = Vector2(1114, -554)
 [node name="Late" type="Node2D" parent="TextEffects" unique_id=1758528692]
 position = Vector2(1113, 61)
 
-[connection signal="cleared_anomaly" from="Monitor" to="TextEffects" method="_on_monitor_cleared_anomaly"]
-[connection signal="pressed_wrong_color" from="Monitor" to="." method="_on_monitor_pressed_wrong_color"]
+[node name="StateManager" type="Node2D" parent="." unique_id=1451434207]
+script = ExtResource("39_p5dy6")
+
+[node name="Playing" type="Node2D" parent="StateManager" unique_id=21949740]
+script = ExtResource("40_o7tkd")
+
+[node name="Success" type="Node2D" parent="StateManager" unique_id=80644850]
+
+[connection signal="cleared_anomaly" from="Desktop/Monitor" to="TextEffects" method="_on_monitor_cleared_anomaly"]
+[connection signal="pressed_wrong_color" from="Desktop/Monitor" to="." method="_on_monitor_pressed_wrong_color"]
 [connection signal="timeout" from="MonitorDesctructionDelayTimer" to="." method="_on_monitor_desctruction_delay_timer_timeout"]
 [connection signal="timeout" from="DestructionTransitionDelay" to="." method="_on_destruction_transition_delay_timeout"]

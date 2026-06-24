@@ -27,6 +27,7 @@ var video_speed = 5
 signal cleared_anomaly(timing: Timing)
 signal pressed_wrong_color
 
+
 func initialize() -> void:
 	video_progress_bar.value = 0
 	video_timestamps = []
@@ -37,6 +38,20 @@ func initialize() -> void:
 		video_timestamps.append((i + 1) * video_step)
 	destroyed.visible = false
 
+
+func reset() -> void:
+	loading.anomalies_dictionary.clear()
+	video.frame = 0
+	video.play()
+	video.visible = true
+	video_progress_bar.value = 0
+	screen.visible = true
+	destroyed.visible = false
+	loading.rotation_speed = loading.base_rotation_speed
+	initialize()
+	states.change_state(MonitorState.State.Playing)
+
+	
 func _ready() -> void:
 	initialize()
 	states.init(self)

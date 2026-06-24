@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://bdypuvoatfclt"]
 
-[ext_resource type="Script" uid="uid://cxww3ov7b35mb" path="res://monitor.gd" id="1_rsw7j"]
+[ext_resource type="Script" uid="uid://cxww3ov7b35mb" path="res://objects/monitor/monitor.gd" id="1_rsw7j"]
 [ext_resource type="Texture2D" uid="uid://cdwvw6e8ievlw" path="res://assets/sprites/sample_vid.png" id="2_53u5w"]
 [ext_resource type="Texture2D" uid="uid://col3scr8ssc61" path="res://assets/sprites/black_screen.png" id="3_tjr77"]
 [ext_resource type="PackedScene" uid="uid://c0f1nurtyvh3u" path="res://objects/loading_spinner.tscn" id="4_q8qw6"]
+[ext_resource type="Texture2D" uid="uid://dv084iuwbn2hw" path="res://assets/sprites/destroyed_screen.png" id="5_nrbdw"]
 [ext_resource type="Script" uid="uid://002pyoemsmy6" path="res://objects/monitor/monitor_state_manager.gd" id="5_tjr77"]
 [ext_resource type="Script" uid="uid://dl2lfkdk5iv07" path="res://objects/monitor/monitor_playing.gd" id="6_q8qw6"]
 [ext_resource type="Script" uid="uid://bdtt77twb03av" path="res://objects/monitor/monitor_loading.gd" id="7_g471j"]
 [ext_resource type="Script" uid="uid://dno27o7dig4vt" path="res://objects/monitor/monitor_finished.gd" id="7_q8qw6"]
+[ext_resource type="Script" uid="uid://b0t7dgjta4m4c" path="res://objects/monitor/monitor_destroyed.gd" id="10_w35jt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ihbs"]
 atlas = ExtResource("2_53u5w")
@@ -140,6 +142,12 @@ value = 50.0
 position = Vector2(400, -183)
 scale = Vector2(1, 1)
 
+[node name="Destroyed" type="Sprite2D" parent="." unique_id=1009965248]
+visible = false
+position = Vector2(377.50006, -221.49998)
+scale = Vector2(0.49713543, 0.42546296)
+texture = ExtResource("5_nrbdw")
+
 [node name="StateManager" type="Node2D" parent="." unique_id=1536444168]
 script = ExtResource("5_tjr77")
 
@@ -155,4 +163,8 @@ script = ExtResource("7_g471j")
 [node name="Finished" type="Node2D" parent="StateManager" unique_id=1827936316]
 script = ExtResource("7_q8qw6")
 
+[node name="Destroyed" type="Node2D" parent="StateManager" unique_id=177557822]
+script = ExtResource("10_w35jt")
+
 [connection signal="cleared_anomaly" from="LoadingSpinner" to="." method="_on_loading_spinner_cleared_anomaly"]
+[connection signal="pressed_wrong_color" from="LoadingSpinner" to="." method="_on_loading_spinner_pressed_wrong_color"]

@@ -6,5 +6,6 @@ enum State {
 	Idle,
 	Playing,
 	Loading,
-	Finished
+	Finished,
+	Destroyed
 }

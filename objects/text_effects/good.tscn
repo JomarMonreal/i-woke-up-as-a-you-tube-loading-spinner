@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dfeuhsbj71n6r"]
+
+[ext_resource type="PackedScene" uid="uid://w1y6ybc6agoa" path="res://objects/explosion.tscn" id="1_o0bbv"]
+[ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://text_effect.gd" id="1_xucs5"]
+[ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="2_xucs5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ni6y"]
+font = ExtResource("2_xucs5")
+font_size = 120
+font_color = Color(0.62322503, 0.97, 0.33950004, 1)
+shadow_size = 30
+shadow_color = Color(0, 0, 0, 0.49803922)
+shadow_offset = Vector2(1, 7.435)
+
+[node name="Good" type="Node2D" unique_id=1019434063]
+script = ExtResource("1_xucs5")
+metadata/_edit_group_ = true
+
+[node name="Explosion" parent="." unique_id=2043430673 instance=ExtResource("1_o0bbv")]
+amount = 15
+spread = 180.0
+initial_velocity_min = 150.0
+initial_velocity_max = 700.0
+scale_amount_min = 0.7
+scale_amount_max = 1.0
+color = Color(0.62352943, 0.96862745, 0.3372549, 1)
+
+[node name="Control" type="Control" parent="." unique_id=1044409982]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 382.0
+offset_bottom = 168.0
+
+[node name="Label" type="Label" parent="Control" unique_id=2010060357]
+layout_mode = 0
+offset_left = -172.0
+offset_top = -59.0
+offset_right = 196.0
+offset_bottom = 68.0
+text = "Good"
+label_settings = SubResource("LabelSettings_1ni6y")
+horizontal_alignment = 1

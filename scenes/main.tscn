@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://jr3rn6nak24x"]
+
+[ext_resource type="Script" uid="uid://dju78ukb6wlmu" path="res://game_manager/game_manager.gd" id="1_tipki"]
+[ext_resource type="Script" uid="uid://bpwknrqltt28b" path="res://game_manager/game_manager_state_manager.gd" id="2_85g3d"]
+[ext_resource type="Script" uid="uid://b077hbe8kdyva" path="res://game_manager/game_manager_loading.gd" id="3_choun"]
+[ext_resource type="PackedScene" uid="uid://4dlydv7w45d2" path="res://scenes/loading.tscn" id="4_ya4ey"]
+[ext_resource type="Script" uid="uid://dvuj3qimtse0n" path="res://game_manager/game_manager_main_menu.gd" id="5_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://bc4yli5h2xybd" path="res://assets/sprites/white.png" id="6_5poiv"]
+[ext_resource type="PackedScene" uid="uid://poj2ymoe5det" path="res://scenes/main_menu.tscn" id="6_trceg"]
+[ext_resource type="Script" uid="uid://b71r4j54uha5q" path="res://game_manager/game_manager_prototype.gd" id="7_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://c6plbgwb8qexb" path="res://scenes/gameplay.tscn" id="8_jkv2x"]
+[ext_resource type="Script" uid="uid://yeq3vgc1jrj3" path="res://game_manager/game_manager_losing.gd" id="9_5he1u"]
+[ext_resource type="Texture2D" uid="uid://cx502pstw3wcq" path="res://assets/sprites/girl_punching/frame0000.png" id="9_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://bi5sglnf2ofy3" path="res://assets/sprites/girl_punching/frame0001.png" id="10_5he1u"]
+[ext_resource type="Texture2D" uid="uid://dess4frx35u2c" path="res://assets/sprites/girl_punching/frame0002.png" id="11_5poiv"]
+[ext_resource type="Texture2D" uid="uid://c3d1harxfxiey" path="res://assets/sprites/girl_punching/frame0003.png" id="12_2cjbq"]
+[ext_resource type="Texture2D" uid="uid://bnnm1gbo4joup" path="res://assets/sprites/girl_punching/frame0004.png" id="13_chjal"]
+[ext_resource type="Texture2D" uid="uid://cp4o5e4ns78wp" path="res://assets/sprites/girl_punching/frame0005.png" id="14_cjqg0"]
+[ext_resource type="Texture2D" uid="uid://c8w68h1if3wbj" path="res://assets/sprites/girl_punching/frame0006.png" id="15_vchkt"]
+[ext_resource type="Texture2D" uid="uid://dq1y7vm0pp6m7" path="res://assets/sprites/girl_punching/frame0007.png" id="16_txyw0"]
+[ext_resource type="Texture2D" uid="uid://xjph7aktln06" path="res://assets/sprites/girl_punching/frame0008.png" id="17_vc5cj"]
+[ext_resource type="Texture2D" uid="uid://ppxis68gci4j" path="res://assets/sprites/girl_punching/frame0009.png" id="18_nvyfr"]
+[ext_resource type="Texture2D" uid="uid://c6afmifp6qchs" path="res://assets/sprites/girl_punching/frame0010.png" id="19_ty1g6"]
+[ext_resource type="Texture2D" uid="uid://dc6rdyuxmc44h" path="res://assets/sprites/girl_punching/frame0011.png" id="20_j2jfr"]
+[ext_resource type="Texture2D" uid="uid://djss11ruoflpa" path="res://assets/sprites/girl_punching/frame0012.png" id="21_bjg73"]
+[ext_resource type="Texture2D" uid="uid://qv27osl3mti0" path="res://assets/sprites/girl_punching/frame0013.png" id="22_bu4jf"]
+[ext_resource type="Texture2D" uid="uid://djhcrb0168ej5" path="res://assets/sprites/girl_punching/frame0014.png" id="23_o7ddy"]
+[ext_resource type="Texture2D" uid="uid://dy55hcn78whml" path="res://assets/sprites/girl_punching/frame0015.png" id="24_0loja"]
+[ext_resource type="Texture2D" uid="uid://c7bo2701sqk6m" path="res://assets/sprites/girl_punching/frame0016.png" id="25_ids8r"]
+[ext_resource type="Texture2D" uid="uid://d1nqypkb5jexb" path="res://assets/sprites/girl_punching/frame0017.png" id="26_dnhof"]
+[ext_resource type="Texture2D" uid="uid://dqcoiss1mkl0x" path="res://assets/sprites/girl_punching/frame0018.png" id="27_1v6qk"]
+[ext_resource type="Texture2D" uid="uid://cui1psv2nuaap" path="res://assets/sprites/girl_punching/frame0019.png" id="28_augu2"]
+[ext_resource type="Texture2D" uid="uid://cbjx6jcr26yi2" path="res://assets/sprites/girl_punching/frame0020.png" id="29_tm6hj"]
+[ext_resource type="Texture2D" uid="uid://d7tyd16mh8jy" path="res://assets/sprites/girl_punching/frame0021.png" id="30_kf5aa"]
+[ext_resource type="Texture2D" uid="uid://bvwpkaj3blquv" path="res://assets/sprites/girl_punching/frame0022.png" id="31_t5ykj"]
+[ext_resource type="Texture2D" uid="uid://kn46h5sk1f0h" path="res://assets/sprites/girl_punching/frame0023.png" id="32_e755i"]
+[ext_resource type="Texture2D" uid="uid://ysvfnmku3pv8" path="res://assets/sprites/girl_punching/frame0024.png" id="33_ro3en"]
+[ext_resource type="Texture2D" uid="uid://ch4un243rpjy6" path="res://assets/sprites/girl_punching/frame0025.png" id="34_od4ux"]
+[ext_resource type="Texture2D" uid="uid://bwlqobqg30e81" path="res://assets/sprites/girl_punching/frame0026.png" id="35_xhfw6"]
+[ext_resource type="Texture2D" uid="uid://cij8gyvwanl2" path="res://assets/sprites/girl_punching/frame0027.png" id="36_1epgm"]
+[ext_resource type="Texture2D" uid="uid://laorapu38mv1" path="res://assets/sprites/girl_punching/frame0028.png" id="37_152kg"]
+[ext_resource type="Texture2D" uid="uid://cohjbkap88wtv" path="res://assets/sprites/girl_punching/frame0029.png" id="38_r4e17"]
+[ext_resource type="Texture2D" uid="uid://c25qd6s1dv2sh" path="res://assets/sprites/girl_punching/frame0030.png" id="39_y57op"]
+[ext_resource type="Script" uid="uid://beaqxe7vec2cq" path="res://hover_button.gd" id="42_2cjbq"]
+
+[sub_resource type="Gradient" id="Gradient_lgwnu"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.39338234, 0.5257353, 0.83455884, 1)
+colors = PackedColorArray(1, 0.34133333, 0.24000001, 1, 0.14117648, 0.9372549, 0, 1, 0.14299884, 0.9361967, 0, 1, 0.13260001, 0.2404999, 0.78, 1, 0.27999997, 0.37599987, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5oca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_c6pm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5he1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5poiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2cjbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_chjal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cjqg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vchkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_txyw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vc5cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nvyfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ty1g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_j2jfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bjg73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_bu4jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_o7ddy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0loja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ids8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dnhof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1v6qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_augu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tm6hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_kf5aa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_t5ykj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_e755i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ro3en")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_od4ux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xhfw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1epgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_152kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_r4e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_y57op")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_5he1u"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Main" type="Node2D" unique_id=1027041361]
+script = ExtResource("1_tipki")
+
+[node name="StateManager" type="Node2D" parent="." unique_id=894109473]
+script = ExtResource("2_85g3d")
+
+[node name="Loading" type="Node2D" parent="StateManager" unique_id=404578024]
+script = ExtResource("3_choun")
+
+[node name="Timer" type="Timer" parent="StateManager/Loading" unique_id=1353052952]
+one_shot = true
+autostart = true
+
+[node name="Loading" parent="StateManager/Loading" unique_id=1601752481 instance=ExtResource("4_ya4ey")]
+
+[node name="MainMenu" type="Node2D" parent="StateManager" unique_id=1494808632]
+script = ExtResource("5_eb6dy")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="StateManager/MainMenu" unique_id=1161924994]
+position = Vector2(-230, 321)
+amount = 150
+texture = ExtResource("6_5poiv")
+lifetime = 10.0
+explosiveness = 0.46
+direction = Vector2(0, 0)
+spread = 128.49
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 840.96
+scale_amount_min = 0.1
+color_ramp = SubResource("Gradient_lgwnu")
+
+[node name="MainMenu" parent="StateManager/MainMenu" unique_id=107323356 instance=ExtResource("6_trceg")]
+
+[node name="Prototype" type="Node2D" parent="StateManager" unique_id=1024326708]
+script = ExtResource("7_a8y0u")
+
+[node name="Gameplay" parent="StateManager/Prototype" unique_id=2037950974 instance=ExtResource("8_jkv2x")]
+
+[node name="Losing" type="Node2D" parent="StateManager" unique_id=945576397]
+script = ExtResource("9_5he1u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StateManager/Losing" unique_id=528410082]
+position = Vector2(442, -83)
+scale = Vector2(1.0046296, 1.0046296)
+sprite_frames = SubResource("SpriteFrames_v5oca")
+autoplay = "default"
+
+[node name="LosingUI" type="CanvasLayer" parent="StateManager/Losing" unique_id=1186251744]
+script = SubResource("GDScript_5he1u")
+
+[node name="Control" type="Control" parent="StateManager/Losing/LosingUI" unique_id=1935368240]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartButton" type="Button" parent="StateManager/Losing/LosingUI/Control" unique_id=1696676036]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 308.0
+offset_right = 608.0
+offset_bottom = 339.0
+text = "Restart"
+flat = true
+script = ExtResource("42_2cjbq")
+default_color = Color(0.9662064, 0.9662064, 0.9662064, 1)
+hover_color = Color(1, 1, 1, 1)
+
+[connection signal="timeout" from="StateManager/Loading/Timer" to="StateManager/Loading" method="_on_timer_timeout"]
+[connection signal="pressed_endless" from="StateManager/MainMenu/MainMenu" to="." method="_on_main_menu_pressed_endless"]
+[connection signal="pressed_story" from="StateManager/MainMenu/MainMenu" to="." method="_on_main_menu_pressed_story"]
+[connection signal="monitor_destroyed" from="StateManager/Prototype/Gameplay" to="." method="_on_gameplay_monitor_destroyed"]
+[connection signal="animation_finished" from="StateManager/Losing/AnimatedSprite2D" to="StateManager/Losing" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="button_up" from="StateManager/Losing/LosingUI/Control/RestartButton" to="." method="_on_restart_button_button_up"]

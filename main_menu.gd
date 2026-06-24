@@ -1,12 +1,10 @@
 extends CanvasLayer
 
 @export var start_button: Button
-@export var option: Button
 @export var exit: Button
 
-signal pressed_start
-signal pressed_option
-signal pressed_exit
+signal pressed_story
+signal pressed_endless
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,15 +14,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_start_button_up() -> void:
-	pressed_start.emit()
+func _on_story_button_up() -> void:
+	pressed_story.emit()
 	pass # Replace with function body.
 
 
-func _on_option_button_up() -> void:
-	pressed_option.emit()
-
-
-func _on_exit_button_up() -> void:
-	pressed_exit.emit()
+func _on_endless_button_up() -> void:
+	pressed_endless.emit()
+	pass # Replace with function body.

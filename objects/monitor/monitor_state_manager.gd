@@ -7,6 +7,7 @@ func _ready() -> void:
 		MonitorState.State.Playing: $Playing,
 		MonitorState.State.Loading: $Loading,
 		MonitorState.State.Finished:$Finished,
+		MonitorState.State.Destroyed:$Destroyed,
 	}
 
 	initial_state = MonitorState.State.Playing

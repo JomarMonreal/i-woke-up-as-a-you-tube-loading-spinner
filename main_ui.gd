@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name MainUI
 
 enum Timing {
 	Early,
@@ -7,17 +8,29 @@ enum Timing {
 	Late
 }
 
-@onready var timing_label: Label = $Control/Label
-# Called when the node enters the scene tree for the first time.
+@onready var red_overlay: TextureRect = $Control/RedOverlay
+@onready var camera: GameCamera = get_tree().get_first_node_in_group("camera")
+@onready var punch: AnimationPlayer = $Control/AnimationPlayer
+
+@export var flash_speed := 0.15
+var base_modulation = 0.0
+var _flash_tween: Tween
+
+func modulate_base(amount: float) -> void:
+	if _flash_tween:
+		_flash_tween.kill()
+	base_modulation = amount
+	red_overlay.modulate.a = amount
+
 func _ready() -> void:
-	pass # Replace with function body.
+	red_overlay.modulate.a = base_modulation
 
+func flash_red() -> void:
+	if _flash_tween:
+		_flash_tween.kill()
+	_flash_tween = create_tween()
+	_flash_tween.tween_property(red_overlay, "modulate:a", 1.0, flash_speed)
+	_flash_tween.tween_property(red_overlay, "modulate:a", base_modulation, flash_speed)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
-
-
-func _on_monitor_cleared_anomaly(timing: Monitor.Timing) -> void:
-	var timing_string = Timing.keys()[timing]
-	timing_label.text = timing_string

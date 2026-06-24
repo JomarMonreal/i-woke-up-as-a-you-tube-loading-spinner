@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bi5jgo5sbh5ew"]
+
+[ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://text_effect.gd" id="1_8mv0o"]
+[ext_resource type="PackedScene" uid="uid://w1y6ybc6agoa" path="res://objects/explosion.tscn" id="2_xiwmc"]
+[ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="3_iu1ns"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_02mon"]
+font = ExtResource("3_iu1ns")
+font_size = 150
+font_color = Color(1, 1, 0.37, 1)
+shadow_size = 30
+shadow_color = Color(0, 0, 0, 0.42352942)
+shadow_offset = Vector2(11.185, 8.955)
+
+[node name="Perfect" type="Node2D" unique_id=479878003]
+script = ExtResource("1_8mv0o")
+metadata/_edit_group_ = true
+
+[node name="Explosion" parent="." unique_id=2043430673 instance=ExtResource("2_xiwmc")]
+amount = 15
+spread = 180.0
+initial_velocity_min = 150.0
+initial_velocity_max = 1000.0
+scale_amount_min = 1.0
+scale_amount_max = 1.5
+color = Color(1, 1, 0.41568628, 1)
+
+[node name="Control" type="Control" parent="." unique_id=978418405]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 329.0
+offset_bottom = 59.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control" unique_id=669141959]
+layout_mode = 0
+offset_left = -331.0
+offset_top = -82.0
+offset_right = 354.0
+offset_bottom = 77.0
+text = "PERFECT"
+label_settings = SubResource("LabelSettings_02mon")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

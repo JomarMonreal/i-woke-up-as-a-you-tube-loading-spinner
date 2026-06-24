@@ -1,0 +1,317 @@
+[gd_scene format=3 uid="uid://c6plbgwb8qexb"]
+
+[ext_resource type="Texture2D" uid="uid://b0cfl5kr2pmn2" path="res://assets/sprites/backgorund.png" id="1_oe8ih"]
+[ext_resource type="Script" uid="uid://8mhbfe2qfhoq" path="res://gameplay.gd" id="1_smepj"]
+[ext_resource type="Script" uid="uid://didr0y3rynqq1" path="res://camera.gd" id="2_fbudy"]
+[ext_resource type="Texture2D" uid="uid://c5hflu0qkgaij" path="res://assets/sprites/computer.png" id="3_smepj"]
+[ext_resource type="PackedScene" uid="uid://bdypuvoatfclt" path="res://objects/monitor/monitor.tscn" id="4_cbffv"]
+[ext_resource type="Script" uid="uid://bymgaxsdbvrvf" path="res://main_ui.gd" id="6_cbffv"]
+[ext_resource type="Texture2D" uid="uid://bde6wqyy15nry" path="res://assets/sprites/red_overlay.png" id="7_7r3lg"]
+[ext_resource type="Shader" uid="uid://dqdts67l8144e" path="res://shaders/contrast.gdshader" id="7_deoll"]
+[ext_resource type="Texture2D" uid="uid://corp2jgjk70q4" path="res://assets/sprites/girl_watching/frame0000.png" id="7_nccno"]
+[ext_resource type="Texture2D" uid="uid://6d2o5epohubg" path="res://assets/sprites/punch.png" id="8_5a717"]
+[ext_resource type="Texture2D" uid="uid://bj6h3ovoko868" path="res://assets/sprites/girl_watching/frame0001.png" id="8_deoll"]
+[ext_resource type="Texture2D" uid="uid://csbsik5o0t1jl" path="res://assets/sprites/girl_watching/frame0002.png" id="9_7r3lg"]
+[ext_resource type="Texture2D" uid="uid://u8sruuyuly13" path="res://assets/sprites/girl_watching/frame0003.png" id="10_1ni6y"]
+[ext_resource type="Texture2D" uid="uid://cghf6n0jlojxy" path="res://assets/sprites/girl_watching/frame0004.png" id="11_xvjhw"]
+[ext_resource type="Texture2D" uid="uid://k10q6f11q1ay" path="res://assets/sprites/girl_watching/frame0005.png" id="12_d3t05"]
+[ext_resource type="Texture2D" uid="uid://2vui72a63mbd" path="res://assets/sprites/girl_watching/frame0006.png" id="13_j6kuv"]
+[ext_resource type="Texture2D" uid="uid://dsffd5mwsvrro" path="res://assets/sprites/girl_watching/frame0007.png" id="14_s35uu"]
+[ext_resource type="Texture2D" uid="uid://b3bt6bl5ff8m5" path="res://assets/sprites/girl_watching/frame0008.png" id="15_5a717"]
+[ext_resource type="Texture2D" uid="uid://cikfwobipkmiv" path="res://assets/sprites/girl_watching/frame0009.png" id="16_dsr22"]
+[ext_resource type="Texture2D" uid="uid://cdng047vmf560" path="res://assets/sprites/girl_watching/frame0010.png" id="17_d8yap"]
+[ext_resource type="Texture2D" uid="uid://djcig00nyv4tu" path="res://assets/sprites/girl_watching/frame0011.png" id="18_nm2fk"]
+[ext_resource type="Texture2D" uid="uid://csyhnq5650nxm" path="res://assets/sprites/girl_watching/frame0012.png" id="19_xmqtf"]
+[ext_resource type="Texture2D" uid="uid://ck4nnv6b5scv6" path="res://assets/sprites/girl_watching/frame0013.png" id="20_yyn0e"]
+[ext_resource type="Texture2D" uid="uid://bjlhd7l172uek" path="res://assets/sprites/girl_watching/frame0014.png" id="21_btttg"]
+[ext_resource type="Texture2D" uid="uid://xc476v568gon" path="res://assets/sprites/girl_watching/frame0015.png" id="22_qosk1"]
+[ext_resource type="Texture2D" uid="uid://dgvp7wm1m86uo" path="res://assets/sprites/girl_watching/frame0016.png" id="23_qd3xc"]
+[ext_resource type="Texture2D" uid="uid://b4oegdkli24nv" path="res://assets/sprites/girl_watching/frame0017.png" id="24_rpuk1"]
+[ext_resource type="Texture2D" uid="uid://c6emmygp3qwh5" path="res://assets/sprites/girl_watching/frame0018.png" id="25_rj5u3"]
+[ext_resource type="Texture2D" uid="uid://y15706i8pupb" path="res://assets/sprites/girl_watching/frame0019.png" id="26_xtfhd"]
+[ext_resource type="Texture2D" uid="uid://r4e0eceuna4j" path="res://assets/sprites/girl_watching/frame0020.png" id="27_hnypg"]
+[ext_resource type="Texture2D" uid="uid://bi4akoh8andn2" path="res://assets/sprites/girl_watching/frame0021.png" id="28_5oeyi"]
+[ext_resource type="Texture2D" uid="uid://ba55kuxco1lbs" path="res://assets/sprites/girl_watching/frame0022.png" id="29_p4h56"]
+[ext_resource type="Texture2D" uid="uid://31q07i51att0" path="res://assets/sprites/girl_watching/frame0023.png" id="30_87mwl"]
+[ext_resource type="Script" uid="uid://ddq5n4urwwf1t" path="res://text_effects_manager.gd" id="33_1ni6y"]
+[ext_resource type="PackedScene" uid="uid://bi5jgo5sbh5ew" path="res://objects/text_effects/perfect.tscn" id="34_s35uu"]
+[ext_resource type="PackedScene" uid="uid://dfeuhsbj71n6r" path="res://objects/text_effects/good.tscn" id="35_5a717"]
+[ext_resource type="PackedScene" uid="uid://3gdi21vv2edi" path="res://objects/text_effects/early.tscn" id="36_dsr22"]
+[ext_resource type="PackedScene" uid="uid://byxjs1o8vkahh" path="res://objects/text_effects/late.tscn" id="37_d8yap"]
+
+[sub_resource type="Animation" id="Animation_5a717"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Punch:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Punch:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(155, 13)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Punch:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dsr22"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Punch:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="Animation" id="Animation_d8yap"]
+resource_name = "punch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Punch:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Punch:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 1500), Vector2(0, 13)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Punch:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.5707963267948966, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nm2fk"]
+_data = {
+&"RESET": SubResource("Animation_5a717"),
+&"default": SubResource("Animation_dsr22"),
+&"punch": SubResource("Animation_d8yap")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_deoll"]
+shader = ExtResource("7_deoll")
+shader_parameter/brightness = 1.06000005035
+shader_parameter/contrast = 1.614000076665
+shader_parameter/saturation = 0.9470000449825
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_02mon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_nccno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_deoll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7r3lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1ni6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xvjhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d3t05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_j6kuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s35uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5a717")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dsr22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_d8yap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nm2fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xmqtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yyn0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_btttg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qosk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qd3xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_rpuk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rj5u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xtfhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hnypg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5oeyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_p4h56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_87mwl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Gameplay" type="Node2D" unique_id=2037950974]
+script = ExtResource("1_smepj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1707255845 groups=["camera"]]
+offset = Vector2(450, -100)
+zoom = Vector2(0.3, 0.3)
+script = ExtResource("2_fbudy")
+
+[node name="Background2" type="Sprite2D" parent="." unique_id=458975056]
+texture = ExtResource("1_oe8ih")
+
+[node name="Monitor" parent="." unique_id=1991079730 instance=ExtResource("4_cbffv")]
+
+[node name="Desktop" type="Sprite2D" parent="." unique_id=2082037652]
+texture = ExtResource("3_smepj")
+
+[node name="MainUI" type="CanvasLayer" parent="." unique_id=1477824664]
+script = ExtResource("6_cbffv")
+
+[node name="Control" type="Control" parent="MainUI" unique_id=1554447120]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RedOverlay" type="TextureRect" parent="MainUI/Control" unique_id=448992094]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_7r3lg")
+expand_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainUI/Control" unique_id=510144177]
+libraries/ = SubResource("AnimationLibrary_nm2fk")
+autoplay = &"default"
+
+[node name="Punch" type="TextureRect" parent="MainUI/Control/AnimationPlayer" unique_id=512135755]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 155.0
+offset_top = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_5a717")
+expand_mode = 1
+
+[node name="WatchingGirl" type="AnimatedSprite2D" parent="." unique_id=219408500]
+material = SubResource("ShaderMaterial_deoll")
+position = Vector2(304.88892, 171.5)
+scale = Vector2(0.8412037, 0.8412037)
+sprite_frames = SubResource("SpriteFrames_02mon")
+autoplay = "default"
+frame_progress = 0.5390252
+
+[node name="MonitorDesctructionDelayTimer" type="Timer" parent="." unique_id=406503237]
+wait_time = 0.1
+
+[node name="DestructionTransitionDelay" type="Timer" parent="." unique_id=1578858677]
+wait_time = 0.1
+
+[node name="TextEffects" type="Node2D" parent="." unique_id=1265800733]
+script = ExtResource("33_1ni6y")
+perfect_text = ExtResource("34_s35uu")
+good_text = ExtResource("35_5a717")
+early_text = ExtResource("36_dsr22")
+late_text = ExtResource("37_d8yap")
+
+[node name="Perfect" type="Node2D" parent="TextEffects" unique_id=136141688]
+position = Vector2(-196, -521)
+
+[node name="Good" type="Node2D" parent="TextEffects" unique_id=712428778]
+position = Vector2(-336, 65)
+
+[node name="Early" type="Node2D" parent="TextEffects" unique_id=360912099]
+position = Vector2(1114, -554)
+
+[node name="Late" type="Node2D" parent="TextEffects" unique_id=1758528692]
+position = Vector2(1113, 61)
+
+[connection signal="cleared_anomaly" from="Monitor" to="TextEffects" method="_on_monitor_cleared_anomaly"]
+[connection signal="pressed_wrong_color" from="Monitor" to="." method="_on_monitor_pressed_wrong_color"]
+[connection signal="timeout" from="MonitorDesctructionDelayTimer" to="." method="_on_monitor_desctruction_delay_timer_timeout"]
+[connection signal="timeout" from="DestructionTransitionDelay" to="." method="_on_destruction_transition_delay_timeout"]

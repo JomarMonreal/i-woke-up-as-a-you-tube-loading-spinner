@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://3gdi21vv2edi"]
+
+[ext_resource type="PackedScene" uid="uid://w1y6ybc6agoa" path="res://objects/explosion.tscn" id="1_gkqtm"]
+[ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://text_effect.gd" id="1_j47w7"]
+[ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="2_j47w7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xul5k"]
+font = ExtResource("2_j47w7")
+font_size = 64
+font_color = Color(0.7607843, 1, 1, 1)
+shadow_size = 30
+shadow_color = Color(0, 0, 0, 0.49803922)
+shadow_offset = Vector2(1, 7.435)
+
+[node name="Early" type="Node2D" unique_id=1532448713]
+script = ExtResource("1_j47w7")
+metadata/_edit_group_ = true
+
+[node name="Explosion" parent="." unique_id=2043430673 instance=ExtResource("1_gkqtm")]
+amount = 10
+spread = 180.0
+initial_velocity_min = 150.0
+initial_velocity_max = 500.0
+scale_amount_min = 0.7
+scale_amount_max = 1.0
+color = Color(0.59607846, 1, 1, 1)
+
+[node name="Control" type="Control" parent="." unique_id=1406918929]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 382.0
+offset_bottom = 168.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control" unique_id=1488020229]
+layout_mode = 0
+offset_left = -154.0
+offset_top = -32.0
+offset_right = 175.0
+offset_bottom = 57.0
+text = "EARLY"
+label_settings = SubResource("LabelSettings_xul5k")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

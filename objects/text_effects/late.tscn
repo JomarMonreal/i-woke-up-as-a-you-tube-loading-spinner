@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://byxjs1o8vkahh"]
+
+[ext_resource type="PackedScene" uid="uid://w1y6ybc6agoa" path="res://objects/explosion.tscn" id="1_f0x47"]
+[ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://text_effect.gd" id="1_j463d"]
+[ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="2_j463d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xvjhw"]
+font = ExtResource("2_j463d")
+font_size = 64
+font_color = Color(1, 0.6966667, 0.48000002, 1)
+shadow_size = 30
+shadow_color = Color(0, 0, 0, 0.49803922)
+shadow_offset = Vector2(1, 7.435)
+
+[node name="Late" type="Node2D" unique_id=2094295033]
+script = ExtResource("1_j463d")
+metadata/_edit_group_ = true
+
+[node name="Explosion" parent="." unique_id=2043430673 instance=ExtResource("1_f0x47")]
+amount = 10
+spread = 180.0
+initial_velocity_min = 150.0
+initial_velocity_max = 500.0
+scale_amount_min = 0.7
+scale_amount_max = 1.0
+color = Color(0.99607843, 0.69411767, 0.47843137, 1)
+
+[node name="Control" type="Control" parent="." unique_id=1894609806]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 382.0
+offset_bottom = 168.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1412678626]
+layout_mode = 0
+offset_left = -154.0
+offset_top = -32.0
+offset_right = 175.0
+offset_bottom = 57.0
+text = "Late"
+label_settings = SubResource("LabelSettings_xvjhw")
+horizontal_alignment = 1

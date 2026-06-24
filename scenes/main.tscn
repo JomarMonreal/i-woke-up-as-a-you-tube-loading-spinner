@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://cohjbkap88wtv" path="res://assets/sprites/girl_punching/frame0029.png" id="38_r4e17"]
 [ext_resource type="Texture2D" uid="uid://c25qd6s1dv2sh" path="res://assets/sprites/girl_punching/frame0030.png" id="39_y57op"]
 [ext_resource type="Script" uid="uid://beaqxe7vec2cq" path="res://hover_button.gd" id="42_2cjbq"]
+[ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="42_chjal"]
 
 [sub_resource type="Gradient" id="Gradient_lgwnu"]
 interpolation_mode = 2
@@ -163,6 +164,9 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="Theme" id="Theme_dlb4e"]
+default_font = ExtResource("42_chjal")
+
 [node name="Main" type="Node2D" unique_id=1027041361]
 script = ExtResource("1_tipki")
 
@@ -170,9 +174,11 @@ script = ExtResource("1_tipki")
 script = ExtResource("2_85g3d")
 
 [node name="Loading" type="Node2D" parent="StateManager" unique_id=404578024]
+visible = false
 script = ExtResource("3_choun")
 
 [node name="Timer" type="Timer" parent="StateManager/Loading" unique_id=1353052952]
+wait_time = 5.0
 one_shot = true
 autostart = true
 
@@ -228,6 +234,7 @@ offset_left = 543.0
 offset_top = 308.0
 offset_right = 608.0
 offset_bottom = 339.0
+theme = SubResource("Theme_dlb4e")
 text = "Restart"
 flat = true
 script = ExtResource("42_2cjbq")

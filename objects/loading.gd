@@ -21,7 +21,8 @@ enum Timing {
 
 @export var steps: int = 30
 @export var radius: float = 32
-@export var rotation_speed: float = 90
+@export var base_rotation_speed: float = 90
+var rotation_speed: float = 90
 
 @onready var spinner: Node2D = $Spinner
 @onready var spinner_collider: CollisionShape2D = $Spinner/CollisionShape2D
@@ -51,22 +52,24 @@ func clear_anomaly(anomaly: Anomaly):
 		return Timing.Perfect
 	
 
-func spwan_anomaly_at_border():
-	var possible_degrees = range(0,360,steps)
-	
-	for i in range(max_anomaly_count):
-		var rand_index = randi_range(i, len(possible_degrees) - 1) 
+func spwan_anomaly_at_border(config: AnomalySpawnConfig = null) -> void:
+	var count = config.count if config else max_anomaly_count
+	var keys = config.anomaly_keys if config else anomaly_keys
+	var possible_degrees = range(0, 360, steps)
+
+	for i in range(count):
+		var rand_index = randi_range(i, len(possible_degrees) - 1)
 		var temp = possible_degrees[i]
 		possible_degrees[i] = possible_degrees[rand_index]
 		possible_degrees[rand_index] = temp
-		
-	for i in range(max_anomaly_count):
+
+	for i in range(count):
 		var anomaly_instance = anomaly.instantiate() as Anomaly
 		var degree = possible_degrees[i]
 		var radians = deg_to_rad(degree)
 		anomaly_instance.position = Vector2(cos(radians), sin(radians)) * radius
 		anomaly_instance.spinner_collider = spinner_collider
-		anomaly_instance.texture_key = anomaly_keys[randi_range(0, len(anomaly_keys) - 1)]
+		anomaly_instance.texture_key = keys[randi_range(0, len(keys) - 1)]
 		anomalies_dictionary[i] = anomaly_instance
 		add_child(anomaly_instance)
 		move_child(anomaly_instance, 0)

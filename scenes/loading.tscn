@@ -1,5 +1,25 @@
 [gd_scene format=3 uid="uid://4dlydv7w45d2"]
 
+[ext_resource type="Script" uid="uid://dvvb6xoio07jf" path="res://floating_controls.gd" id="1_101rs"]
+[ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="1_yc7uc"]
+[ext_resource type="Texture2D" uid="uid://5n4r8mlaykow" path="res://assets/sprites/loading.png" id="2_dhqfv"]
+[ext_resource type="Script" uid="uid://d3ynurfpun27r" path="res://spinning_texture.gd" id="4_yt702"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_101rs"]
+font = ExtResource("1_yc7uc")
+font_size = 27
+font_color = Color(1, 0.14999998, 0.14999998, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yt702"]
+font = ExtResource("1_yc7uc")
+font_size = 27
+font_color = Color(0.51, 1, 0.39999998, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ytni"]
+font = ExtResource("1_yc7uc")
+font_size = 27
+font_color = Color(0.45999998, 1, 0.97300005, 1)
+
 [node name="Loading" type="CanvasLayer" unique_id=1601752481]
 
 [node name="Control" type="Control" parent="." unique_id=2064225741]
@@ -23,4 +43,49 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Loading..."
+text = "Loading"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1843104361]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -114.0
+offset_right = 457.0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(16.96, 0)
+script = ExtResource("1_101rs")
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=1846220764]
+layout_mode = 2
+text = "Press J when RED shows up"
+label_settings = SubResource("LabelSettings_101rs")
+
+[node name="Label2" type="Label" parent="Control/VBoxContainer" unique_id=189441604]
+layout_mode = 2
+text = "Press K when GREEN shows up"
+label_settings = SubResource("LabelSettings_yt702")
+
+[node name="Label3" type="Label" parent="Control/VBoxContainer" unique_id=903987307]
+layout_mode = 2
+text = "Press L when BLUE shows up"
+label_settings = SubResource("LabelSettings_2ytni")
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=341102082]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -61.0
+offset_right = 63.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dhqfv")
+expand_mode = 3
+script = ExtResource("4_yt702")
+rotation_speed = 180.0

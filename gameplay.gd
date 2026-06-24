@@ -62,6 +62,7 @@ func reset() -> void:
 	monitor.screen.visible = true
 	monitor.destroyed.visible = false
 	monitor.initialize()
+	monitor.loading.rotation_speed = monitor.loading.base_rotation_speed
 	_previous_monitor_state = null
 	monitor.states.change_state(MonitorState.State.Playing)
 
@@ -103,6 +104,7 @@ func _on_monitor_pressed_wrong_color() -> void:
 
 func _on_monitor_desctruction_delay_timer_timeout() -> void:
 	monitor.states.change_state(MonitorState.State.Destroyed)
+	main_ui.punch.current_animation = "default"
 	main_ui.punch.play("default")
 	monitor_destruction_delay_timer.stop()
 	destruciton_transition_delay.start()
@@ -110,6 +112,8 @@ func _on_monitor_desctruction_delay_timer_timeout() -> void:
 
 func _on_destruction_transition_delay_timeout() -> void:
 	main_ui.punch.play("default")
+	main_ui.punch.advance(0.0)
+	if camera:
+		camera.zoom_to(default_zoom, default_camera_position, zoom_duration)
 	monitor_destroyed.emit()
-	print("DESTROYED")
 	destruciton_transition_delay.stop()

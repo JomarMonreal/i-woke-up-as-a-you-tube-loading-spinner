@@ -22,15 +22,22 @@ enum Timing {
 @onready var watching_girl: AnimatedSprite2D = $WatchingGirl
 @onready var monitor_destruction_delay_timer: Timer = $MonitorDesctructionDelayTimer
 @onready var destruciton_transition_delay: Timer = $DestructionTransitionDelay
+@onready var desktop: Node2D = $Desktop
 
-
-@export var max_patience_level = 1
+@export var score_scene: PackedScene
+var max_patience_level = 1
 var patience_level = 1
+
+var perfect_count := 0
+var good_count := 0
+var early_count := 0
+var late_count := 0
 
 var _previous_monitor_state: BaseState = null
 
 signal video_finished
 signal monitor_destroyed
+signal go_to_main_menu
 
 func reset() -> void:
 	monitor_destruction_delay_timer.stop()
@@ -44,6 +51,10 @@ func reset() -> void:
 	
 	monitor.reset()
 	_previous_monitor_state = null
+	perfect_count = 0
+	good_count = 0
+	early_count = 0
+	late_count = 0
 
 func _ready() -> void:
 	states.init(self)
@@ -54,6 +65,13 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	states.physics_process(delta)
 
+
+func _on_monitor_cleared_anomaly(timing: Monitor.Timing) -> void:
+	match timing:
+		Monitor.Timing.Perfect: perfect_count += 1
+		Monitor.Timing.Good:    good_count += 1
+		Monitor.Timing.Early:   early_count += 1
+		Monitor.Timing.Late:    late_count += 1
 
 func _on_monitor_pressed_wrong_color() -> void:
 	main_ui.flash_red()

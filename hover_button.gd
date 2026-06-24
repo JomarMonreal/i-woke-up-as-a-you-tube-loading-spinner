@@ -1,4 +1,4 @@
-extends Button
+extends Control
 
 @export var default_font_size := 16
 @export var hover_font_size := 22

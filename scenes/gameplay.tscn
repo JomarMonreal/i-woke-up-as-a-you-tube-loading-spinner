@@ -40,6 +40,8 @@
 [ext_resource type="PackedScene" uid="uid://byxjs1o8vkahh" path="res://objects/text_effects/late.tscn" id="37_d8yap"]
 [ext_resource type="Script" uid="uid://c6wrdh3uxsqec" path="res://gameplay/gameplay_state_manager.gd" id="39_p5dy6"]
 [ext_resource type="Script" uid="uid://bsplpsxmt7xo1" path="res://gameplay/gameplay_playing.gd" id="40_o7tkd"]
+[ext_resource type="Script" uid="uid://n6xkm5q5e5re" path="res://gameplay/gameplay_success.gd" id="41_81iov"]
+[ext_resource type="PackedScene" uid="uid://clns14ufqdwef" path="res://scenes/score.tscn" id="42_slt2r"]
 
 [sub_resource type="Animation" id="Animation_5a717"]
 length = 0.001
@@ -229,6 +231,7 @@ animations = [{
 
 [node name="Gameplay" type="Node2D" unique_id=2037950974]
 script = ExtResource("1_smepj")
+score_scene = ExtResource("42_slt2r")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1707255845 groups=["camera"]]
 offset = Vector2(450, -100)
@@ -255,6 +258,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="RedOverlay" type="TextureRect" parent="MainUI/Control" unique_id=448992094]
 layout_mode = 1
@@ -322,7 +326,9 @@ script = ExtResource("39_p5dy6")
 script = ExtResource("40_o7tkd")
 
 [node name="Success" type="Node2D" parent="StateManager" unique_id=80644850]
+script = ExtResource("41_81iov")
 
+[connection signal="cleared_anomaly" from="Desktop/Monitor" to="." method="_on_monitor_cleared_anomaly"]
 [connection signal="cleared_anomaly" from="Desktop/Monitor" to="TextEffects" method="_on_monitor_cleared_anomaly"]
 [connection signal="pressed_wrong_color" from="Desktop/Monitor" to="." method="_on_monitor_pressed_wrong_color"]
 [connection signal="timeout" from="MonitorDesctructionDelayTimer" to="." method="_on_monitor_desctruction_delay_timer_timeout"]

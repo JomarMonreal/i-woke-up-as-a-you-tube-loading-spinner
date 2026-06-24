@@ -25,8 +25,12 @@ func _on_restart_button_button_up() -> void:
 
 
 func _on_main_menu_pressed_endless() -> void:
-	states.change_state(GameManagerState.State.Prototype)
+	states.change_state(GameManagerState.State.Loading)
 
 
 func _on_main_menu_pressed_story() -> void:
-	states.change_state(GameManagerState.State.Prototype)
+	states.change_state(GameManagerState.State.Loading)
+
+
+func _on_gameplay_go_to_main_menu() -> void:
+	states.change_state(GameManagerState.State.MainMenu)

@@ -19,6 +19,10 @@ func process(delta: float) -> int:
 	var camera = gameplay.camera
 	var watching_girl = gameplay.watching_girl
 	
+	if 	monitor.video_progress_bar.value >= 100:
+		return GameplayState.State.Success
+	
+	
 	if current == gameplay._previous_monitor_state:
 		return GameplayState.State.Playing
 	gameplay._previous_monitor_state = current
@@ -40,4 +44,5 @@ func process(delta: float) -> int:
 		gameplay.video_finished.emit()
 	elif current == monitor.states.states[MonitorState.State.Destroyed]:
 		camera.zoom_to(default_zoom, default_camera_position, zoom_duration)
+		
 	return GameplayState.State.Playing

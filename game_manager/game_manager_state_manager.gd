@@ -17,4 +17,4 @@ func _ready() -> void:
 		GameManagerState.State.Losing: $Losing,
 	}
 		
-	initial_state = GameManagerState.State.Loading
+	initial_state = GameManagerState.State.MainMenu

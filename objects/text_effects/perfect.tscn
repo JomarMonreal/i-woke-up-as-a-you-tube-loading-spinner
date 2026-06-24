@@ -9,8 +9,8 @@ font = ExtResource("3_iu1ns")
 font_size = 150
 font_color = Color(1, 1, 0.37, 1)
 shadow_size = 30
-shadow_color = Color(0, 0, 0, 0.42352942)
-shadow_offset = Vector2(11.185, 8.955)
+shadow_color = Color(0, 0, 0, 0.49803922)
+shadow_offset = Vector2(1, 7.435)
 
 [node name="Perfect" type="Node2D" unique_id=479878003]
 script = ExtResource("1_8mv0o")

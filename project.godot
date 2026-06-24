@@ -23,6 +23,7 @@ window/stretch/aspect="expand"
 [global_group]
 
 camera=""
+game_manager=""
 
 [input]
 

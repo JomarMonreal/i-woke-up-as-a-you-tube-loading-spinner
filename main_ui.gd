@@ -24,6 +24,7 @@ func modulate_base(amount: float) -> void:
 
 func _ready() -> void:
 	red_overlay.modulate.a = base_modulation
+	$Control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func flash_red() -> void:
 	if _flash_tween:

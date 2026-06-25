@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://corp2jgjk70q4" path="res://assets/sprites/girl_watching/frame0000.png" id="7_nccno"]
 [ext_resource type="Texture2D" uid="uid://6d2o5epohubg" path="res://assets/sprites/punch.png" id="8_5a717"]
 [ext_resource type="Texture2D" uid="uid://bj6h3ovoko868" path="res://assets/sprites/girl_watching/frame0001.png" id="8_deoll"]
+[ext_resource type="Script" uid="uid://dvvb6xoio07jf" path="res://floating_controls.gd" id="8_fykia"]
 [ext_resource type="Texture2D" uid="uid://csbsik5o0t1jl" path="res://assets/sprites/girl_watching/frame0002.png" id="9_7r3lg"]
+[ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="9_7yuvj"]
 [ext_resource type="Texture2D" uid="uid://u8sruuyuly13" path="res://assets/sprites/girl_watching/frame0003.png" id="10_1ni6y"]
 [ext_resource type="Texture2D" uid="uid://cghf6n0jlojxy" path="res://assets/sprites/girl_watching/frame0004.png" id="11_xvjhw"]
 [ext_resource type="Texture2D" uid="uid://k10q6f11q1ay" path="res://assets/sprites/girl_watching/frame0005.png" id="12_d3t05"]
@@ -46,6 +48,21 @@
 [ext_resource type="AudioStream" uid="uid://d3kytmlhs8lml" path="res://assets/music/main_loading.ogg" id="44_7qo25"]
 [ext_resource type="AudioStream" uid="uid://dqueqcgxtq6lb" path="res://assets/music/error.wav" id="45_ww381"]
 [ext_resource type="AudioStream" uid="uid://olpmr1e8y8j3" path="res://assets/music/first_destroy.wav" id="46_7qo25"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_02mon"]
+font = ExtResource("9_7yuvj")
+font_size = 45
+font_color = Color(1, 0.32, 0.32, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2nsf"]
+font = ExtResource("9_7yuvj")
+font_size = 45
+font_color = Color(0.35400003, 1, 0.32, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_urfw8"]
+font = ExtResource("9_7yuvj")
+font_size = 45
+font_color = Color(0.32, 0.97733337, 1, 1)
 
 [sub_resource type="Animation" id="Animation_5a717"]
 length = 0.001
@@ -254,6 +271,41 @@ spawn_config = ExtResource("6_yjd84")
 
 [node name="Desk" type="Sprite2D" parent="Desktop" unique_id=2082037652]
 texture = ExtResource("3_smepj")
+
+[node name="Control" type="Control" parent="Desktop/Desk" unique_id=236254291]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_fykia")
+float_speed = 0.5
+
+[node name="Label" type="Label" parent="Desktop/Desk/Control" unique_id=742139813]
+layout_mode = 0
+offset_left = -1420.0
+offset_top = -389.0
+offset_right = -1182.0
+offset_bottom = -341.0
+text = "J for Red"
+label_settings = SubResource("LabelSettings_02mon")
+
+[node name="Label2" type="Label" parent="Desktop/Desk/Control" unique_id=622230998]
+layout_mode = 0
+offset_left = -1424.0
+offset_top = -305.0
+offset_right = -1186.0
+offset_bottom = -257.0
+text = "K for Green"
+label_settings = SubResource("LabelSettings_h2nsf")
+
+[node name="Label3" type="Label" parent="Desktop/Desk/Control" unique_id=932960298]
+layout_mode = 0
+offset_left = -1424.0
+offset_top = -213.0
+offset_right = -1186.0
+offset_bottom = -165.0
+text = "L for Blue"
+label_settings = SubResource("LabelSettings_urfw8")
 
 [node name="MainUI" type="CanvasLayer" parent="." unique_id=1477824664]
 script = ExtResource("6_cbffv")

@@ -19,7 +19,7 @@ func process(_delta: float) -> int:
 		monitor.video_timestamps.pop_front()
 		if monitor.spawn_configs_queue.size() > 0:
 			monitor.spawn_configs_queue.pop_front()
-		monitor.loading.increase_speed(2 if monitor.is_endless else 20)
+		monitor.loading.increase_speed(2 if monitor.is_endless else 10)
 		return MonitorState.State.Playing
 
 	return MonitorState.State.Loading

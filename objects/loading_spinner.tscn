@@ -13,6 +13,7 @@ script = ExtResource("1_th1ic")
 anomaly = ExtResource("2_3hayp")
 max_anomaly_count = 3
 radius = 113.0
+base_rotation_speed = 120.0
 metadata/_edit_horizontal_guides_ = [-32.0]
 
 [node name="Spinner" type="Area2D" parent="." unique_id=703190748]
@@ -22,5 +23,5 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_omo3s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spinner" unique_id=1096628040]
-position = Vector2(448, 0)
+position = Vector2(464, -32)
 shape = SubResource("CircleShape2D_02mon")

@@ -52,7 +52,7 @@ func initialize() -> void:
 
 func _generate_endless_config(iteration: int) -> AnomalySpawnConfig:
 	var config = AnomalySpawnConfig.new()
-	config.count = 2 + int(iteration / 3.0)
+	config.count = mini(2 + int(iteration / 3.0), int(360.0 / loading.steps))
 	var color_index = iteration % 3
 	config.anomaly_keys.append(AnomalySpawnConfig.AnomalyColor.Red)
 	if color_index >= 1:

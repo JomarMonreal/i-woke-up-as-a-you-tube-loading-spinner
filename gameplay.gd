@@ -61,6 +61,7 @@ func reset() -> void:
 		if is_instance_valid(anomaly):
 			anomaly.queue_free()
 	
+	monitor.endless_iteration = 0
 	monitor.reset()
 	_previous_monitor_state = null
 	perfect_count = 0

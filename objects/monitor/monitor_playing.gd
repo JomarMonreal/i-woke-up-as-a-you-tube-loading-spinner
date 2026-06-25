@@ -21,6 +21,7 @@ func process(delta: float) -> int:
 		return MonitorState.State.Loading
 	if monitor.video_progress_bar.value >= monitor.video_length:
 		if monitor.is_endless:
+			monitor.endless_iteration += 1
 			monitor.reset()
 			if len(monitor.video_timestamps) > 0:
 				target_timestamp = monitor.video_timestamps[0]

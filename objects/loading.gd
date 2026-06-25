@@ -43,13 +43,13 @@ func clear_anomaly(anomaly: Anomaly):
 	var sprite_scale = anomaly.sprite_scale
 	var has_been_passed = anomaly.has_been_pased
 	anomaly.clear()
-	if sprite_scale < 0.2:
+	if sprite_scale < 0.15:
 		if has_been_passed:
 			return Timing.Late
 		else:
 			return Timing.Early
 		
-	elif sprite_scale >= 0.2 and  sprite_scale < 0.4:
+	elif sprite_scale >= 0.15 and  sprite_scale < 0.3:
 		return Timing.Good
 	else:
 		return Timing.Perfect

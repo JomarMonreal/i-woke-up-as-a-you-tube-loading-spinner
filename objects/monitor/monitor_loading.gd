@@ -13,13 +13,13 @@ func enter() -> void:
 	var config = monitor.spawn_configs_queue[0] if monitor.spawn_configs_queue.size() > 0 else null
 	monitor.loading.spwan_anomaly_at_border(config)
 
-func process(delta: float) -> int:
+func process(_delta: float) -> int:
 	var monitor := entity as Monitor
 	if monitor.loading.anomalies_dictionary.size() == 0:
 		monitor.video_timestamps.pop_front()
 		if monitor.spawn_configs_queue.size() > 0:
 			monitor.spawn_configs_queue.pop_front()
-		monitor.loading.increase_speed(20)
+		monitor.loading.increase_speed(2 if monitor.is_endless else 20)
 		return MonitorState.State.Playing
 
 	return MonitorState.State.Loading

@@ -1,8 +1,5 @@
 extends CanvasLayer
 
-@export var start_button: Button
-@export var exit: Button
-
 signal pressed_story
 signal pressed_endless
 

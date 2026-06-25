@@ -24,16 +24,16 @@ func _on_restart_button_button_up() -> void:
 
 
 func _on_main_menu_pressed_endless() -> void:
-	gameplay.reset()
 	gameplay.is_endless = true
 	gameplay.monitor.is_endless = true
+	gameplay.reset()
 	states.change_state(GameManagerState.State.Loading)
 
 
 func _on_main_menu_pressed_story() -> void:
-	gameplay.reset()
 	gameplay.is_endless = false
 	gameplay.monitor.is_endless = false
+	gameplay.reset()
 	states.change_state(GameManagerState.State.Loading)
 
 

@@ -24,6 +24,7 @@ var spawn_configs_queue: Array[AnomalySpawnConfig] = []
 var video_length: float = 100
 var video_speed = 5
 var is_endless = true
+var endless_iteration := 0
 
 signal cleared_anomaly(timing: Timing)
 signal pressed_wrong_color
@@ -32,13 +33,33 @@ signal loading_completed_rotation
 func initialize() -> void:
 	video_progress_bar.value = 0
 	video_timestamps = []
-	var configs = spawn_config.spawn_configs if spawn_config else []
-	spawn_configs_queue = configs.duplicate()
-	var count = configs.size()
-	var video_step = video_length / (count + 1)
-	for i in range(count):
-		video_timestamps.append((i + 1) * video_step)
+	if is_endless:
+		var config = _generate_endless_config(endless_iteration)
+		var stamp_count = randi_range(4, 6)
+		var step = video_length / (stamp_count + 1)
+		for i in range(stamp_count):
+			video_timestamps.append((i + 1) * step)
+			spawn_configs_queue.append(config)
+	else:
+		var configs = spawn_config.spawn_configs if spawn_config else []
+		spawn_configs_queue = configs.duplicate()
+		var count = configs.size()
+		var video_step = video_length / (count + 1)
+		for i in range(count):
+			video_timestamps.append((i + 1) * video_step)
 	destroyed.visible = false
+
+
+func _generate_endless_config(iteration: int) -> AnomalySpawnConfig:
+	var config = AnomalySpawnConfig.new()
+	config.count = 2 + int(iteration / 3.0)
+	var color_index = iteration % 3
+	config.anomaly_keys.append(AnomalySpawnConfig.AnomalyColor.Red)
+	if color_index >= 1:
+		config.anomaly_keys.append(AnomalySpawnConfig.AnomalyColor.Green)
+	if color_index >= 2:
+		config.anomaly_keys.append(AnomalySpawnConfig.AnomalyColor.Blue)
+	return config
 
 
 func reset() -> void:

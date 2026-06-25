@@ -1,8 +1,8 @@
 extends GameplayState
 
 @export var duration := 1.0
-@export var default_zoom := Vector2(-5, -5)
-@export var default_camera_position := Vector2(500,100)
+@export var default_zoom := Vector2(0.5, 0.5)
+@export var default_camera_position := Vector2(300,-100)
 @export var loading_zoom := Vector2(0.5, 0.5)
 @export var loading_camera_position := Vector2(300.0, -100.0)
 @export var playing_zoom := Vector2(0.3, 0.3)

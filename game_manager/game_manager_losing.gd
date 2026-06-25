@@ -10,6 +10,7 @@ func enter() -> void:
 	losing_ui.visible = false
 	animation.frame = 0
 	animation.play()
+	
 
 func exit() -> void:
 	toggle_state_visibility(self, false) 
@@ -17,6 +18,7 @@ func exit() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func process(delta: float) -> int:
+	var game_manager := entity as GameManager
 	return GameManagerState.State.Losing
 
 

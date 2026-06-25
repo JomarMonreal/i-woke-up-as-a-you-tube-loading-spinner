@@ -217,8 +217,8 @@ script = ExtResource("7_a8y0u")
 script = ExtResource("9_5he1u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StateManager/Losing" unique_id=528410082]
-position = Vector2(442, -83)
-scale = Vector2(1.0046296, 1.0046296)
+position = Vector2(170.99998, -126)
+scale = Vector2(0.72407395, 0.72407407)
 sprite_frames = SubResource("SpriteFrames_v5oca")
 autoplay = "default"
 

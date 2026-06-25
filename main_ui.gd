@@ -11,6 +11,8 @@ enum Timing {
 @onready var red_overlay: TextureRect = $Control/RedOverlay
 @onready var camera: GameCamera = get_tree().get_first_node_in_group("camera")
 @onready var punch: AnimationPlayer = $Control/AnimationPlayer
+@onready var punch_texture: TextureRect = $Control/AnimationPlayer/Punch
+
 
 @export var flash_speed := 0.15
 var base_modulation = 0.0

@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://clns14ufqdwef" path="res://scenes/score.tscn" id="42_slt2r"]
 [ext_resource type="AudioStream" uid="uid://4fngbj46ywbb" path="res://assets/music/main_loading.wav" id="44_wexui"]
 [ext_resource type="AudioStream" uid="uid://dqueqcgxtq6lb" path="res://assets/music/error.wav" id="45_ww381"]
+[ext_resource type="AudioStream" uid="uid://olpmr1e8y8j3" path="res://assets/music/first_destroy.wav" id="46_7qo25"]
 
 [sub_resource type="Animation" id="Animation_5a717"]
 length = 0.001
@@ -298,13 +299,13 @@ position = Vector2(304.88892, 171.5)
 scale = Vector2(0.8412037, 0.8412037)
 sprite_frames = SubResource("SpriteFrames_02mon")
 autoplay = "default"
-frame_progress = 0.05459527
+frame_progress = 0.9161555
 
 [node name="MonitorDesctructionDelayTimer" type="Timer" parent="." unique_id=406503237]
 wait_time = 0.1
 
 [node name="DestructionTransitionDelay" type="Timer" parent="." unique_id=1578858677]
-wait_time = 0.1
+wait_time = 0.5
 
 [node name="TextEffects" type="Node2D" parent="." unique_id=1265800733]
 script = ExtResource("33_1ni6y")
@@ -339,6 +340,9 @@ stream = ExtResource("44_wexui")
 
 [node name="ErrorSFX" type="AudioStreamPlayer2D" parent="." unique_id=145330091]
 stream = ExtResource("45_ww381")
+
+[node name="MonitorDestroyedSFX" type="AudioStreamPlayer2D" parent="." unique_id=970334849]
+stream = ExtResource("46_7qo25")
 
 [connection signal="cleared_anomaly" from="Desktop/Monitor" to="." method="_on_monitor_cleared_anomaly"]
 [connection signal="cleared_anomaly" from="Desktop/Monitor" to="TextEffects" method="_on_monitor_cleared_anomaly"]

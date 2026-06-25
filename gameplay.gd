@@ -18,7 +18,7 @@ enum Timing {
 @onready var states: GameplayStateManager = $StateManager
 @onready var main_ui: MainUI = $MainUI
 @onready var monitor: Monitor = $Desktop/Monitor
-@onready var camera: Camera2D = get_tree().get_first_node_in_group("camera")
+@onready var camera: GameCamera = get_tree().get_first_node_in_group("camera")
 @onready var watching_girl: AnimatedSprite2D = $WatchingGirl
 @onready var monitor_destruction_delay_timer: Timer = $MonitorDesctructionDelayTimer
 @onready var destruciton_transition_delay: Timer = $DestructionTransitionDelay
@@ -26,6 +26,8 @@ enum Timing {
 
 @onready var music: AudioStreamPlayer2D = $GameplayMusic
 @onready var error_sfx: AudioStreamPlayer2D = $ErrorSFX
+@onready var monitor_destroyed_sfx: AudioStreamPlayer2D = $MonitorDestroyedSFX
+
 
 @export var is_endless = true
 @export var score_scene: PackedScene
@@ -34,6 +36,9 @@ var patience_level = 1
 
 @export var rotation_patience_penalty := 0.1
 @export var perfect_patience_reward := 0.1
+
+@export var playing_zoom := Vector2(0.3, 0.3)
+@export var playing_camera_position := Vector2(0.0, 0.0)
 
 var perfect_count := 0
 var good_count := 0
@@ -99,21 +104,20 @@ func _on_monitor_pressed_wrong_color() -> void:
 		else:
 			monitor_destruction_delay_timer.start()
 			main_ui.punch.play("punch")
+			monitor_destroyed_sfx.play()
 
 
 func _on_monitor_desctruction_delay_timer_timeout() -> void:
 	music.stop()
 	monitor.states.change_state(MonitorState.State.Destroyed)
-	main_ui.punch.current_animation = "default"
-	main_ui.punch.play("default")
 	monitor_destruction_delay_timer.stop()
 	destruciton_transition_delay.start()
 
 
 func _on_destruction_transition_delay_timeout() -> void:
-	main_ui.punch.play("default")
-	main_ui.punch.advance(0.0)
 	monitor_destroyed.emit()
+	main_ui.punch.play("default")
+	main_ui.punch_texture.visible = false
 	destruciton_transition_delay.stop()
 
 

@@ -11,6 +11,8 @@ var _current_size: float
 var _current_color: Color
 
 func _ready() -> void:
+	pivot_offset = size / 2.0
+	resized.connect(func(): pivot_offset = size / 2.0)
 	_current_size = default_font_size
 	_current_color = default_color
 	add_theme_font_size_override("font_size", default_font_size)

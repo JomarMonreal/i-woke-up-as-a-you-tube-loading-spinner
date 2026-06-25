@@ -35,3 +35,7 @@ func _on_main_menu_pressed_story() -> void:
 	gameplay.is_endless = false
 	gameplay.monitor.is_endless = false
 	states.change_state(GameManagerState.State.Loading)
+
+
+func _on_exit_button_up() -> void:
+	states.change_state(GameManagerState.State.MainMenu)

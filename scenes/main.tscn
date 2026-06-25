@@ -228,14 +228,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RestartButton" type="Button" parent="StateManager/Losing/LosingUI/Control" unique_id=1696676036]
-layout_mode = 0
-offset_left = 543.0
-offset_top = 308.0
-offset_right = 608.0
-offset_bottom = 339.0
+[node name="VBoxContainer" type="VBoxContainer" parent="StateManager/Losing/LosingUI/Control" unique_id=2088392113]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -28.0
+offset_right = 43.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartButton" type="Button" parent="StateManager/Losing/LosingUI/Control/VBoxContainer" unique_id=1696676036]
+layout_mode = 2
 theme = SubResource("Theme_dlb4e")
 text = "Restart"
+flat = true
+script = ExtResource("42_2cjbq")
+default_color = Color(0.9662064, 0.9662064, 0.9662064, 1)
+hover_color = Color(1, 1, 1, 1)
+
+[node name="Exit" type="Button" parent="StateManager/Losing/LosingUI/Control/VBoxContainer" unique_id=94296006]
+layout_mode = 2
+theme = SubResource("Theme_dlb4e")
+text = "Exit"
 flat = true
 script = ExtResource("42_2cjbq")
 default_color = Color(0.9662064, 0.9662064, 0.9662064, 1)
@@ -246,4 +265,5 @@ hover_color = Color(1, 1, 1, 1)
 [connection signal="pressed_story" from="StateManager/MainMenu/MainMenu" to="." method="_on_main_menu_pressed_story"]
 [connection signal="monitor_destroyed" from="StateManager/Prototype/Gameplay" to="." method="_on_gameplay_monitor_destroyed"]
 [connection signal="animation_finished" from="StateManager/Losing/AnimatedSprite2D" to="StateManager/Losing" method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="button_up" from="StateManager/Losing/LosingUI/Control/RestartButton" to="." method="_on_restart_button_button_up"]
+[connection signal="button_up" from="StateManager/Losing/LosingUI/Control/VBoxContainer/RestartButton" to="." method="_on_restart_button_button_up"]
+[connection signal="button_up" from="StateManager/Losing/LosingUI/Control/VBoxContainer/Exit" to="." method="_on_exit_button_up"]

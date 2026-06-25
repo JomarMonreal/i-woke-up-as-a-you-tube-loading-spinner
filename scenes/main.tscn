@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6plbgwb8qexb" path="res://scenes/gameplay.tscn" id="8_jkv2x"]
 [ext_resource type="Script" uid="uid://yeq3vgc1jrj3" path="res://game_manager/game_manager_losing.gd" id="9_5he1u"]
 [ext_resource type="Texture2D" uid="uid://cx502pstw3wcq" path="res://assets/sprites/girl_punching/frame0000.png" id="9_c6pm6"]
-[ext_resource type="AudioStream" uid="uid://brg1lwi1pmmav" path="res://assets/music/main_menu.wav" id="9_vchkt"]
+[ext_resource type="AudioStream" uid="uid://dirlkaxvto37w" path="res://assets/music/main_menu.ogg" id="9_txyw0"]
 [ext_resource type="Texture2D" uid="uid://bi5sglnf2ofy3" path="res://assets/sprites/girl_punching/frame0001.png" id="10_5he1u"]
 [ext_resource type="Texture2D" uid="uid://dess4frx35u2c" path="res://assets/sprites/girl_punching/frame0002.png" id="11_5poiv"]
 [ext_resource type="Texture2D" uid="uid://c3d1harxfxiey" path="res://assets/sprites/girl_punching/frame0003.png" id="12_2cjbq"]
@@ -205,8 +205,9 @@ script = ExtResource("7_cjqg0")
 [node name="MainMenu" parent="StateManager/MainMenu" unique_id=107323356 instance=ExtResource("6_trceg")]
 
 [node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="StateManager/MainMenu" unique_id=201122422]
-stream = ExtResource("9_vchkt")
+stream = ExtResource("9_txyw0")
 autoplay = true
+playback_type = 1
 
 [node name="Prototype" type="Node2D" parent="StateManager" unique_id=1024326708]
 script = ExtResource("7_a8y0u")

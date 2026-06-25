@@ -43,7 +43,7 @@
 [ext_resource type="Script" uid="uid://bsplpsxmt7xo1" path="res://gameplay/gameplay_playing.gd" id="40_o7tkd"]
 [ext_resource type="Script" uid="uid://n6xkm5q5e5re" path="res://gameplay/gameplay_success.gd" id="41_81iov"]
 [ext_resource type="PackedScene" uid="uid://clns14ufqdwef" path="res://scenes/score.tscn" id="42_slt2r"]
-[ext_resource type="AudioStream" uid="uid://4fngbj46ywbb" path="res://assets/music/main_loading.wav" id="44_wexui"]
+[ext_resource type="AudioStream" uid="uid://d3kytmlhs8lml" path="res://assets/music/main_loading.ogg" id="44_7qo25"]
 [ext_resource type="AudioStream" uid="uid://dqueqcgxtq6lb" path="res://assets/music/error.wav" id="45_ww381"]
 [ext_resource type="AudioStream" uid="uid://olpmr1e8y8j3" path="res://assets/music/first_destroy.wav" id="46_7qo25"]
 
@@ -299,7 +299,7 @@ position = Vector2(304.88892, 171.5)
 scale = Vector2(0.8412037, 0.8412037)
 sprite_frames = SubResource("SpriteFrames_02mon")
 autoplay = "default"
-frame_progress = 0.9161555
+frame_progress = 0.37622884
 
 [node name="MonitorDesctructionDelayTimer" type="Timer" parent="." unique_id=406503237]
 wait_time = 0.1
@@ -336,7 +336,8 @@ script = ExtResource("40_o7tkd")
 script = ExtResource("41_81iov")
 
 [node name="GameplayMusic" type="AudioStreamPlayer2D" parent="." unique_id=1519868629]
-stream = ExtResource("44_wexui")
+stream = ExtResource("44_7qo25")
+playback_type = 1
 
 [node name="ErrorSFX" type="AudioStreamPlayer2D" parent="." unique_id=145330091]
 stream = ExtResource("45_ww381")

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://w1y6ybc6agoa" path="res://objects/explosion.tscn" id="5_7w2o3"]
 [ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="6_4qrk4"]
 [ext_resource type="AudioStream" uid="uid://cpelha0gqltdg" path="res://assets/music/early.wav" id="9_7w2o3"]
+[ext_resource type="AudioStream" uid="uid://cigq1oxcj1x1f" path="res://assets/music/perfect.wav" id="10_4qrk4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7w2o3"]
 font = ExtResource("6_4qrk4")
@@ -166,6 +167,10 @@ anchor_right = 1.3389063
 anchor_bottom = -0.68644094
 text = "press any key to continue"
 label_settings = SubResource("LabelSettings_4qrk4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=82387060]
+stream = ExtResource("10_4qrk4")
+autoplay = true
 
 [editable path="ScoreLabel"]
 [editable path="LateScore"]

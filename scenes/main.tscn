@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6plbgwb8qexb" path="res://scenes/gameplay.tscn" id="8_jkv2x"]
 [ext_resource type="Script" uid="uid://yeq3vgc1jrj3" path="res://game_manager/game_manager_losing.gd" id="9_5he1u"]
 [ext_resource type="Texture2D" uid="uid://cx502pstw3wcq" path="res://assets/sprites/girl_punching/frame0000.png" id="9_c6pm6"]
+[ext_resource type="AudioStream" uid="uid://brg1lwi1pmmav" path="res://assets/music/main_menu.wav" id="9_vchkt"]
 [ext_resource type="Texture2D" uid="uid://bi5sglnf2ofy3" path="res://assets/sprites/girl_punching/frame0001.png" id="10_5he1u"]
 [ext_resource type="Texture2D" uid="uid://dess4frx35u2c" path="res://assets/sprites/girl_punching/frame0002.png" id="11_5poiv"]
 [ext_resource type="Texture2D" uid="uid://c3d1harxfxiey" path="res://assets/sprites/girl_punching/frame0003.png" id="12_2cjbq"]
@@ -44,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://c25qd6s1dv2sh" path="res://assets/sprites/girl_punching/frame0030.png" id="39_y57op"]
 [ext_resource type="Script" uid="uid://beaqxe7vec2cq" path="res://hover_button.gd" id="42_2cjbq"]
 [ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="42_chjal"]
+[ext_resource type="AudioStream" uid="uid://b4f5wlxmtucce" path="res://assets/music/destroy.wav" id="46_txyw0"]
 
 [sub_resource type="Gradient" id="Gradient_lgwnu"]
 interpolation_mode = 2
@@ -175,7 +177,6 @@ script = ExtResource("1_tipki")
 script = ExtResource("2_85g3d")
 
 [node name="Loading" type="Node2D" parent="StateManager" unique_id=404578024]
-visible = false
 script = ExtResource("3_choun")
 
 [node name="Timer" type="Timer" parent="StateManager/Loading" unique_id=1353052952]
@@ -202,6 +203,10 @@ color_ramp = SubResource("Gradient_lgwnu")
 script = ExtResource("7_cjqg0")
 
 [node name="MainMenu" parent="StateManager/MainMenu" unique_id=107323356 instance=ExtResource("6_trceg")]
+
+[node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="StateManager/MainMenu" unique_id=201122422]
+stream = ExtResource("9_vchkt")
+autoplay = true
 
 [node name="Prototype" type="Node2D" parent="StateManager" unique_id=1024326708]
 script = ExtResource("7_a8y0u")
@@ -259,6 +264,9 @@ flat = true
 script = ExtResource("42_2cjbq")
 default_color = Color(0.9662064, 0.9662064, 0.9662064, 1)
 hover_color = Color(1, 1, 1, 1)
+
+[node name="DestroyAudio" type="AudioStreamPlayer2D" parent="StateManager/Losing" unique_id=1716408248]
+stream = ExtResource("46_txyw0")
 
 [connection signal="timeout" from="StateManager/Loading/Timer" to="StateManager/Loading" method="_on_timer_timeout"]
 [connection signal="pressed_endless" from="StateManager/MainMenu/MainMenu" to="." method="_on_main_menu_pressed_endless"]

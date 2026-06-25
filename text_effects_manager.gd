@@ -29,14 +29,18 @@ func _process(delta: float) -> void:
 
 func _on_monitor_cleared_anomaly(timing: Monitor.Timing) -> void:
 	if timing == Timing.Perfect:
-		var instance = perfect_text.instantiate()
+		var instance = perfect_text.instantiate() as TextEffect
 		perfect_spawn.add_child(instance)
+		instance.sound.play()
 	if timing == Timing.Good:
-		var instance = good_text.instantiate()
+		var instance = good_text.instantiate() as TextEffect
 		good_spawn.add_child(instance)
+		instance.sound.play()
 	if timing == Timing.Early:
-		var instance = early_text.instantiate()
+		var instance = early_text.instantiate() as TextEffect
 		early_spawn.add_child(instance)
+		instance.sound.play()
 	if timing == Timing.Late:
-		var instance = late_text.instantiate()
+		var instance = late_text.instantiate() as TextEffect
 		late_spawn.add_child(instance)
+		instance.sound.play()

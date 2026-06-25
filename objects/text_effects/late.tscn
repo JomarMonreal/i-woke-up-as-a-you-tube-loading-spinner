@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://w1y6ybc6agoa" path="res://objects/explosion.tscn" id="1_f0x47"]
 [ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://text_effect.gd" id="1_j463d"]
 [ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="2_j463d"]
+[ext_resource type="AudioStream" uid="uid://cpelha0gqltdg" path="res://assets/music/early.wav" id="4_18dtd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xvjhw"]
 font = ExtResource("2_j463d")
@@ -40,3 +41,7 @@ offset_bottom = 57.0
 text = "Late"
 label_settings = SubResource("LabelSettings_xvjhw")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=72336086]
+stream = ExtResource("4_18dtd")
+autoplay = true

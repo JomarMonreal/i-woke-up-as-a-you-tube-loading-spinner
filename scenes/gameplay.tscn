@@ -43,6 +43,8 @@
 [ext_resource type="Script" uid="uid://bsplpsxmt7xo1" path="res://gameplay/gameplay_playing.gd" id="40_o7tkd"]
 [ext_resource type="Script" uid="uid://n6xkm5q5e5re" path="res://gameplay/gameplay_success.gd" id="41_81iov"]
 [ext_resource type="PackedScene" uid="uid://clns14ufqdwef" path="res://scenes/score.tscn" id="42_slt2r"]
+[ext_resource type="AudioStream" uid="uid://4fngbj46ywbb" path="res://assets/music/main_loading.wav" id="44_wexui"]
+[ext_resource type="AudioStream" uid="uid://dqueqcgxtq6lb" path="res://assets/music/error.wav" id="45_ww381"]
 
 [sub_resource type="Animation" id="Animation_5a717"]
 length = 0.001
@@ -227,7 +229,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 12.0
+"speed": 23.0
 }]
 
 [node name="Gameplay" type="Node2D" unique_id=2037950974]
@@ -296,7 +298,7 @@ position = Vector2(304.88892, 171.5)
 scale = Vector2(0.8412037, 0.8412037)
 sprite_frames = SubResource("SpriteFrames_02mon")
 autoplay = "default"
-frame_progress = 0.5390252
+frame_progress = 0.05459527
 
 [node name="MonitorDesctructionDelayTimer" type="Timer" parent="." unique_id=406503237]
 wait_time = 0.1
@@ -331,6 +333,12 @@ script = ExtResource("40_o7tkd")
 
 [node name="Success" type="Node2D" parent="StateManager" unique_id=80644850]
 script = ExtResource("41_81iov")
+
+[node name="GameplayMusic" type="AudioStreamPlayer2D" parent="." unique_id=1519868629]
+stream = ExtResource("44_wexui")
+
+[node name="ErrorSFX" type="AudioStreamPlayer2D" parent="." unique_id=145330091]
+stream = ExtResource("45_ww381")
 
 [connection signal="cleared_anomaly" from="Desktop/Monitor" to="." method="_on_monitor_cleared_anomaly"]
 [connection signal="cleared_anomaly" from="Desktop/Monitor" to="TextEffects" method="_on_monitor_cleared_anomaly"]

@@ -44,6 +44,8 @@ func _ready() -> void:
 		actions
 	]
 	for item in items:
+		item.sound.autoplay = false
+		item.sound.stop()
 		item.play()
 		await get_tree().create_timer(item_delay).timeout
 

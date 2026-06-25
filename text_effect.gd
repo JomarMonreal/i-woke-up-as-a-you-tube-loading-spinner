@@ -10,8 +10,10 @@ class_name TextEffect
 @export var final_scale := Vector2(1.0, 1.0)
 @export var auto_free := true
 @export var auto_play := true
+@onready var sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
+	sound.stop()
 	label.scale = Vector2.ZERO
 	label.modulate.a = 1.0
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE

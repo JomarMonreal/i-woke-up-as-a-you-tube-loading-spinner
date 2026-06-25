@@ -24,6 +24,9 @@ enum Timing {
 @onready var destruciton_transition_delay: Timer = $DestructionTransitionDelay
 @onready var desktop: Node2D = $Desktop
 
+@onready var music: AudioStreamPlayer2D = $GameplayMusic
+@onready var error_sfx: AudioStreamPlayer2D = $ErrorSFX
+
 @export var is_endless = true
 @export var score_scene: PackedScene
 var max_patience_level = 1
@@ -43,6 +46,7 @@ var score_instance = null
 signal monitor_destroyed
 
 func reset() -> void:
+	music.play(0)
 	monitor_destruction_delay_timer.stop()
 	destruciton_transition_delay.stop()
 	main_ui.punch.play("default")
@@ -81,6 +85,7 @@ func _on_monitor_cleared_anomaly(timing: Monitor.Timing) -> void:
 		Monitor.Timing.Late:    late_count += 1
 
 func _on_monitor_pressed_wrong_color() -> void:
+	error_sfx.play()
 	main_ui.flash_red()
 	camera.shake(0.4, 20.0)
 	patience_level -= 0.2
@@ -97,6 +102,7 @@ func _on_monitor_pressed_wrong_color() -> void:
 
 
 func _on_monitor_desctruction_delay_timer_timeout() -> void:
+	music.stop()
 	monitor.states.change_state(MonitorState.State.Destroyed)
 	main_ui.punch.current_animation = "default"
 	main_ui.punch.play("default")

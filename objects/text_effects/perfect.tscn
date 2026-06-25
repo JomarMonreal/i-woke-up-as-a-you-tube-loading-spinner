@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://text_effect.gd" id="1_8mv0o"]
 [ext_resource type="PackedScene" uid="uid://w1y6ybc6agoa" path="res://objects/explosion.tscn" id="2_xiwmc"]
 [ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="3_iu1ns"]
+[ext_resource type="AudioStream" uid="uid://cigq1oxcj1x1f" path="res://assets/music/perfect.wav" id="4_xiwmc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_02mon"]
 font = ExtResource("3_iu1ns")
@@ -42,3 +43,7 @@ text = "PERFECT"
 label_settings = SubResource("LabelSettings_02mon")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=343763676]
+stream = ExtResource("4_xiwmc")
+autoplay = true

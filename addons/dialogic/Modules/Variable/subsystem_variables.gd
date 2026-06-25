@@ -177,13 +177,14 @@ func _set(property, value) -> bool:
 
 
 ## Allows to get dialogic built-in variables
-func _get(property):
+func _get(property) -> Variant:
 	property = str(property)
 	if property in dialogic.current_state_info['variables'].keys():
 		if typeof(dialogic.current_state_info['variables'][property]) == TYPE_DICTIONARY:
 			return VariableFolder.new(dialogic.current_state_info['variables'][property], property, self)
 		else:
 			return DialogicUtil.logical_convert(dialogic.current_state_info['variables'][property])
+	return null
 
 
 func folders() -> Array:
@@ -238,13 +239,14 @@ class VariableFolder:
 		outside = _outside
 
 
-	func _get(property:StringName):
+	func _get(property:StringName) -> Variant:
 		property = str(property)
 		if property in data:
 			if typeof(data[property]) == TYPE_DICTIONARY:
 				return VariableFolder.new(data[property], path+"."+property, outside)
 			else:
 				return DialogicUtil.logical_convert(data[property])
+		return null
 
 
 	func _set(property:StringName, value:Variant) -> bool:

@@ -8,6 +8,7 @@ func enter() -> void:
 	monitor.video.play()
 	monitor.video_overlay.visible = false
 	monitor.loading.visible = false
+	monitor.loading.set_process(false)
 	if len(monitor.video_timestamps) > 0:
 		target_timestamp = monitor.video_timestamps[0]
 
@@ -19,5 +20,11 @@ func process(delta: float) -> int:
 	if monitor.video_progress_bar.value > target_timestamp and len(monitor.video_timestamps) > 0:
 		return MonitorState.State.Loading
 	if monitor.video_progress_bar.value >= monitor.video_length:
-		return MonitorState.State.Finished
+		if monitor.is_endless:
+			monitor.reset()
+			if len(monitor.video_timestamps) > 0:
+				target_timestamp = monitor.video_timestamps[0]
+			return MonitorState.State.Playing
+		else:
+			return MonitorState.State.Finished
 	return MonitorState.State.Playing

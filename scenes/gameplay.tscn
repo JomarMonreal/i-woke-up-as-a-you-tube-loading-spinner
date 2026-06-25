@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c5hflu0qkgaij" path="res://assets/sprites/computer.png" id="3_smepj"]
 [ext_resource type="PackedScene" uid="uid://bdypuvoatfclt" path="res://objects/monitor/monitor.tscn" id="4_cbffv"]
 [ext_resource type="Script" uid="uid://bymgaxsdbvrvf" path="res://main_ui.gd" id="6_cbffv"]
+[ext_resource type="Resource" uid="uid://bgfjiuyxqt2b0" path="res://spawn_configs/level_2.tres" id="6_yjd84"]
 [ext_resource type="Texture2D" uid="uid://bde6wqyy15nry" path="res://assets/sprites/red_overlay.png" id="7_7r3lg"]
 [ext_resource type="Shader" uid="uid://dqdts67l8144e" path="res://shaders/contrast.gdshader" id="7_deoll"]
 [ext_resource type="Texture2D" uid="uid://corp2jgjk70q4" path="res://assets/sprites/girl_watching/frame0000.png" id="7_nccno"]
@@ -232,6 +233,8 @@ animations = [{
 [node name="Gameplay" type="Node2D" unique_id=2037950974]
 script = ExtResource("1_smepj")
 score_scene = ExtResource("42_slt2r")
+rotation_patience_penalty = 0.05
+perfect_patience_reward = 0.15
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1707255845 groups=["camera"]]
 offset = Vector2(450, -100)
@@ -244,6 +247,7 @@ texture = ExtResource("1_oe8ih")
 [node name="Desktop" type="Node2D" parent="." unique_id=1046719852]
 
 [node name="Monitor" parent="Desktop" unique_id=1991079730 instance=ExtResource("4_cbffv")]
+spawn_config = ExtResource("6_yjd84")
 
 [node name="Desk" type="Sprite2D" parent="Desktop" unique_id=2082037652]
 texture = ExtResource("3_smepj")
@@ -330,6 +334,7 @@ script = ExtResource("41_81iov")
 
 [connection signal="cleared_anomaly" from="Desktop/Monitor" to="." method="_on_monitor_cleared_anomaly"]
 [connection signal="cleared_anomaly" from="Desktop/Monitor" to="TextEffects" method="_on_monitor_cleared_anomaly"]
+[connection signal="loading_completed_rotation" from="Desktop/Monitor" to="." method="_on_monitor_loading_completed_rotation"]
 [connection signal="pressed_wrong_color" from="Desktop/Monitor" to="." method="_on_monitor_pressed_wrong_color"]
 [connection signal="timeout" from="MonitorDesctructionDelayTimer" to="." method="_on_monitor_desctruction_delay_timer_timeout"]
 [connection signal="timeout" from="DestructionTransitionDelay" to="." method="_on_destruction_transition_delay_timeout"]

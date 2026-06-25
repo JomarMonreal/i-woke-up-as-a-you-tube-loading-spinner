@@ -16,23 +16,25 @@ enum Timing {
 @onready var destroyed: Sprite2D = $Destroyed
 @onready var screen: Sprite2D = $Screen
 
-@export var spawn_configs: Array[AnomalySpawnConfig] = []
+@export var spawn_config: MonitorSpawnConfig
 
 var video_timestamps = []
 var spawn_configs_queue: Array[AnomalySpawnConfig] = []
 
 var video_length: float = 100
 var video_speed = 5
+var is_endless = true
 
 signal cleared_anomaly(timing: Timing)
 signal pressed_wrong_color
-
+signal loading_completed_rotation
 
 func initialize() -> void:
 	video_progress_bar.value = 0
 	video_timestamps = []
-	spawn_configs_queue = spawn_configs.duplicate()
-	var count = spawn_configs.size()
+	var configs = spawn_config.spawn_configs if spawn_config else []
+	spawn_configs_queue = configs.duplicate()
+	var count = configs.size()
 	var video_step = video_length / (count + 1)
 	for i in range(count):
 		video_timestamps.append((i + 1) * video_step)
@@ -69,3 +71,7 @@ func _on_loading_spinner_cleared_anomaly(timing: LoadingSpinner.Timing) -> void:
 
 func _on_loading_spinner_pressed_wrong_color() -> void:
 	pressed_wrong_color.emit()
+
+
+func _on_loading_spinner_completed_rotation() -> void:
+	loading_completed_rotation.emit()

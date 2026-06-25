@@ -24,9 +24,13 @@ enum Timing {
 @onready var destruciton_transition_delay: Timer = $DestructionTransitionDelay
 @onready var desktop: Node2D = $Desktop
 
+@export var is_endless = true
 @export var score_scene: PackedScene
 var max_patience_level = 1
 var patience_level = 1
+
+@export var rotation_patience_penalty := 0.1
+@export var perfect_patience_reward := 0.1
 
 var perfect_count := 0
 var good_count := 0
@@ -34,10 +38,9 @@ var early_count := 0
 var late_count := 0
 
 var _previous_monitor_state: BaseState = null
+var score_instance = null
 
-signal video_finished
 signal monitor_destroyed
-signal go_to_main_menu
 
 func reset() -> void:
 	monitor_destruction_delay_timer.stop()
@@ -55,6 +58,7 @@ func reset() -> void:
 	good_count = 0
 	early_count = 0
 	late_count = 0
+	states.change_state(GameplayState.State.Playing)
 
 func _ready() -> void:
 	states.init(self)
@@ -68,7 +72,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_monitor_cleared_anomaly(timing: Monitor.Timing) -> void:
 	match timing:
-		Monitor.Timing.Perfect: perfect_count += 1
+		Monitor.Timing.Perfect:
+			perfect_count += 1
+			patience_level = minf(patience_level + perfect_patience_reward, max_patience_level)
+			main_ui.modulate_base(1 - patience_level)
 		Monitor.Timing.Good:    good_count += 1
 		Monitor.Timing.Early:   early_count += 1
 		Monitor.Timing.Late:    late_count += 1
@@ -81,8 +88,12 @@ func _on_monitor_pressed_wrong_color() -> void:
 		patience_level = 0
 	main_ui.modulate_base(1 - patience_level)
 	if patience_level <= 0:
-		monitor_destruction_delay_timer.start()
-		main_ui.punch.play("punch")
+		if is_endless:
+			monitor.states.change_state(MonitorState.State.Finished)
+			states.change_state(GameplayState.State.Success)
+		else:
+			monitor_destruction_delay_timer.start()
+			main_ui.punch.play("punch")
 
 
 func _on_monitor_desctruction_delay_timer_timeout() -> void:
@@ -98,3 +109,15 @@ func _on_destruction_transition_delay_timeout() -> void:
 	main_ui.punch.advance(0.0)
 	monitor_destroyed.emit()
 	destruciton_transition_delay.stop()
+
+
+func _on_monitor_loading_completed_rotation() -> void:
+	patience_level = maxf(patience_level - rotation_patience_penalty, 0.0)
+	main_ui.modulate_base(1 - patience_level)
+	if patience_level <= 0:
+		if is_endless:
+			monitor.states.change_state(MonitorState.State.Finished)
+			states.change_state(GameplayState.State.Success)
+		else:
+			monitor_destruction_delay_timer.start()
+			main_ui.punch.play("punch")

@@ -8,6 +8,8 @@ func enter() -> void:
 	monitor.video.pause()
 	monitor.video_overlay.visible = true
 	monitor.loading.visible = true
+	monitor.loading.set_process(true)
+	monitor.loading._accumulated_rotation = 0.0
 	var config = monitor.spawn_configs_queue[0] if monitor.spawn_configs_queue.size() > 0 else null
 	monitor.loading.spwan_anomaly_at_border(config)
 

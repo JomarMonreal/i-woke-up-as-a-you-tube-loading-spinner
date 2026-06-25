@@ -1,5 +1,6 @@
 extends GameplayState
 
+@export var duration := 1.0
 @export var default_zoom := Vector2(-5, -5)
 @export var default_camera_position := Vector2(500,100)
 @export var loading_zoom := Vector2(0.5, 0.5)
@@ -10,6 +11,16 @@ extends GameplayState
 
 @export var default_girl_position := Vector2(304.889, 171.5)
 @export var loading_girl_position := Vector2(804.889, 171.5)
+@export var default_desktop_position := Vector2(0, 0)
+
+func enter() -> void:
+	var gameplay := entity as Gameplay
+	gameplay.main_ui.red_overlay.visible = true
+	create_tween().tween_property(gameplay.watching_girl, "position", default_girl_position, duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+	create_tween().tween_property(gameplay.desktop, "position", default_desktop_position, duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+	if gameplay.score_instance:
+		(gameplay.score_instance as Node2D).queue_free()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func process(delta: float) -> int:

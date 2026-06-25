@@ -21,16 +21,17 @@ func _on_gameplay_monitor_destroyed() -> void:
 func _on_restart_button_button_up() -> void:
 	gameplay.reset()
 	states.change_state(GameManagerState.State.Prototype)
-	pass # Replace with function body.
 
 
 func _on_main_menu_pressed_endless() -> void:
+	gameplay.reset()
+	gameplay.is_endless = true
+	gameplay.monitor.is_endless = true
 	states.change_state(GameManagerState.State.Loading)
 
 
 func _on_main_menu_pressed_story() -> void:
+	gameplay.reset()
+	gameplay.is_endless = false
+	gameplay.monitor.is_endless = false
 	states.change_state(GameManagerState.State.Loading)
-
-
-func _on_gameplay_go_to_main_menu() -> void:
-	states.change_state(GameManagerState.State.MainMenu)

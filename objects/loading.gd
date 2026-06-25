@@ -32,6 +32,9 @@ var closest_visible_anomaly = null
 
 signal cleared_anomaly(timing: Timing)
 signal pressed_wrong_color
+signal completed_rotation
+
+var _accumulated_rotation := 0.0
 
 func increase_speed(speed: float) -> void:
 	rotation_speed += speed
@@ -76,7 +79,12 @@ func spwan_anomaly_at_border(config: AnomalySpawnConfig = null) -> void:
 
 func _process(delta: float) -> void:
 	# distance calculation
-	spinner.rotation_degrees += rotation_speed * delta
+	var step = rotation_speed * delta
+	spinner.rotation_degrees += step
+	_accumulated_rotation += abs(step)
+	if _accumulated_rotation >= 360.0:
+		_accumulated_rotation -= 360.0
+		completed_rotation.emit()
 	closest_visible_anomaly = null
 	var smallest_distance = INF
 	

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cxww3ov7b35mb" path="res://objects/monitor/monitor.gd" id="1_rsw7j"]
 [ext_resource type="Texture2D" uid="uid://cdwvw6e8ievlw" path="res://assets/sprites/sample_vid.png" id="2_53u5w"]
-[ext_resource type="Script" uid="uid://bgjkpf8kwrkoe" path="res://objects/anomaly_spawn_config.gd" id="2_x7byf"]
 [ext_resource type="Texture2D" uid="uid://col3scr8ssc61" path="res://assets/sprites/black_screen.png" id="3_tjr77"]
 [ext_resource type="PackedScene" uid="uid://c0f1nurtyvh3u" path="res://objects/loading_spinner.tscn" id="4_q8qw6"]
 [ext_resource type="Texture2D" uid="uid://dv084iuwbn2hw" path="res://assets/sprites/destroyed_screen.png" id="5_nrbdw"]
@@ -11,35 +10,6 @@
 [ext_resource type="Script" uid="uid://bdtt77twb03av" path="res://objects/monitor/monitor_loading.gd" id="7_g471j"]
 [ext_resource type="Script" uid="uid://dno27o7dig4vt" path="res://objects/monitor/monitor_finished.gd" id="7_q8qw6"]
 [ext_resource type="Script" uid="uid://b0t7dgjta4m4c" path="res://objects/monitor/monitor_destroyed.gd" id="10_w35jt"]
-
-[sub_resource type="Resource" id="Resource_w35jt"]
-script = ExtResource("2_x7byf")
-count = 2
-anomaly_keys = Array[int]([1])
-
-[sub_resource type="Resource" id="Resource_x7byf"]
-script = ExtResource("2_x7byf")
-count = 3
-anomaly_keys = Array[int]([1])
-metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
-
-[sub_resource type="Resource" id="Resource_2r5i8"]
-script = ExtResource("2_x7byf")
-count = 4
-anomaly_keys = Array[int]([1])
-metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
-
-[sub_resource type="Resource" id="Resource_8h1ju"]
-script = ExtResource("2_x7byf")
-count = 3
-anomaly_keys = Array[int]([1, 3])
-metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
-
-[sub_resource type="Resource" id="Resource_obapx"]
-script = ExtResource("2_x7byf")
-count = 3
-anomaly_keys = Array[int]([1, 3])
-metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ihbs"]
 atlas = ExtResource("2_53u5w")
@@ -107,7 +77,6 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_2ihbs")
 
 [node name="Monitor" type="Node2D" unique_id=1991079730]
 script = ExtResource("1_rsw7j")
-spawn_configs = Array[ExtResource("2_x7byf")]([SubResource("Resource_w35jt"), SubResource("Resource_x7byf"), SubResource("Resource_2r5i8"), SubResource("Resource_8h1ju"), SubResource("Resource_obapx")])
 
 [node name="Video" type="AnimatedSprite2D" parent="." unique_id=367834459]
 position = Vector2(371.5, -206.99998)
@@ -198,4 +167,5 @@ script = ExtResource("7_q8qw6")
 script = ExtResource("10_w35jt")
 
 [connection signal="cleared_anomaly" from="LoadingSpinner" to="." method="_on_loading_spinner_cleared_anomaly"]
+[connection signal="completed_rotation" from="LoadingSpinner" to="." method="_on_loading_spinner_completed_rotation"]
 [connection signal="pressed_wrong_color" from="LoadingSpinner" to="." method="_on_loading_spinner_pressed_wrong_color"]

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bc4yli5h2xybd" path="res://assets/sprites/white.png" id="6_5poiv"]
 [ext_resource type="PackedScene" uid="uid://poj2ymoe5det" path="res://scenes/main_menu.tscn" id="6_trceg"]
 [ext_resource type="Script" uid="uid://b71r4j54uha5q" path="res://game_manager/game_manager_prototype.gd" id="7_a8y0u"]
+[ext_resource type="Script" uid="uid://duikujq3i7l74" path="res://scenes/rotating_particles.gd" id="7_cjqg0"]
 [ext_resource type="PackedScene" uid="uid://c6plbgwb8qexb" path="res://scenes/gameplay.tscn" id="8_jkv2x"]
 [ext_resource type="Script" uid="uid://yeq3vgc1jrj3" path="res://game_manager/game_manager_losing.gd" id="9_5he1u"]
 [ext_resource type="Texture2D" uid="uid://cx502pstw3wcq" path="res://assets/sprites/girl_punching/frame0000.png" id="9_c6pm6"]
@@ -191,7 +192,6 @@ position = Vector2(-230, 321)
 amount = 150
 texture = ExtResource("6_5poiv")
 lifetime = 10.0
-explosiveness = 0.46
 direction = Vector2(0, 0)
 spread = 128.49
 gravity = Vector2(0, 0)
@@ -199,6 +199,7 @@ initial_velocity_min = 10.0
 initial_velocity_max = 840.96
 scale_amount_min = 0.1
 color_ramp = SubResource("Gradient_lgwnu")
+script = ExtResource("7_cjqg0")
 
 [node name="MainMenu" parent="StateManager/MainMenu" unique_id=107323356 instance=ExtResource("6_trceg")]
 
@@ -243,7 +244,6 @@ hover_color = Color(1, 1, 1, 1)
 [connection signal="timeout" from="StateManager/Loading/Timer" to="StateManager/Loading" method="_on_timer_timeout"]
 [connection signal="pressed_endless" from="StateManager/MainMenu/MainMenu" to="." method="_on_main_menu_pressed_endless"]
 [connection signal="pressed_story" from="StateManager/MainMenu/MainMenu" to="." method="_on_main_menu_pressed_story"]
-[connection signal="go_to_main_menu" from="StateManager/Prototype/Gameplay" to="." method="_on_gameplay_go_to_main_menu"]
 [connection signal="monitor_destroyed" from="StateManager/Prototype/Gameplay" to="." method="_on_gameplay_monitor_destroyed"]
 [connection signal="animation_finished" from="StateManager/Losing/AnimatedSprite2D" to="StateManager/Losing" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="button_up" from="StateManager/Losing/LosingUI/Control/RestartButton" to="." method="_on_restart_button_button_up"]

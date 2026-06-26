@@ -5,3 +5,4 @@ angie: Pablo...
 [background arg="res://assets/backgrounds/phone.png" fade="1.0" wait="true"]
 [wait time="10.0"]
 angie: Where did you go?
+audio music -

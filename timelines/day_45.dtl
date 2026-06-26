@@ -10,3 +10,4 @@ pablo: I bet she will enjoy Instagram once she created an account there.
 audio "res://assets/music/sirene_1.wav"
 [background arg="res://assets/backgrounds/scene_error.png" fade="1.0" wait="true"]
 pablo: Here we go again...
+audio music -

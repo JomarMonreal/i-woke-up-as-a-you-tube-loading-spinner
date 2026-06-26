@@ -10,3 +10,4 @@ audio "res://assets/music/sirene_1.wav"
 [wait time="1.0"]
 pablo: AURGH!!!
 pause: ¡Adiós mi amigo!
+audio music -

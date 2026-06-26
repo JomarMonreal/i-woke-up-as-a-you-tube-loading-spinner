@@ -37,3 +37,4 @@ audio music "res://assets/music/sustain.ogg"
 [background arg="res://assets/sprites/black_screen.png" fade="0.0"]
 pablo: Wait....
 pablo: Huh?
+audio music -

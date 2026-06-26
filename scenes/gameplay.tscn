@@ -387,6 +387,7 @@ script = ExtResource("41_81iov")
 
 [node name="GameplayMusic" type="AudioStreamPlayer2D" parent="." unique_id=1519868629]
 stream = ExtResource("44_7qo25")
+volume_db = 5.0
 playback_type = 1
 
 [node name="ErrorSFX" type="AudioStreamPlayer2D" parent="." unique_id=145330091]

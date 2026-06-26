@@ -28,7 +28,6 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"day3": "res://timelines/day3.dtl",
 "day_1": "res://timelines/day_1.dtl",
 "day_2": "res://timelines/day_2.dtl",
 "day_3": "res://timelines/day_3.dtl",

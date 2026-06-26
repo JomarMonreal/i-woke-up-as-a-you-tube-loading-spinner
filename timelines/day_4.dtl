@@ -40,3 +40,4 @@ audio "res://assets/music/sirene_1.wav"
 [background arg="res://assets/backgrounds/scene_error.png" fade="0.0"]
 [wait time="1.5"]
 pause: You know what to do?
+audio music -

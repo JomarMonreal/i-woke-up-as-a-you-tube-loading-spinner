@@ -3,9 +3,9 @@ pablo: (What do you mean wait faster?)
 [background arg="res://assets/backgrounds/sleep.png" fade="1.0"]
 pablo: *sighs*
 pablo: *slowly falls to sleep*
-[background arg="res://assets/sprites/black_screen.png" fade="1.0"]
+[background arg="res://assets/sprites/black_screen.png" fade="1.0" wait="true"]
 audio music "res://assets/music/sustain.ogg"
-[wait time="2.0"]
+[wait time="1.0"]
 pablo: Huh???
 pablo: Where am I?
 pablo: I can’t move!
@@ -56,4 +56,5 @@ pablo: So, who’s this impatient Watcher?
 pablo: Wait… she looks like my girlfriend.
 pablo: No! She IS my girlfriend.
 [wait time="2.0"]
+audio music -
 [end_timeline]

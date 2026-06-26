@@ -52,7 +52,8 @@ var score_instance = null
 signal monitor_destroyed
 
 func reset() -> void:
-	music.play(0)
+	music.stop()
+	music.play(0.0)
 	monitor_destruction_delay_timer.stop()
 	destruciton_transition_delay.stop()
 	main_ui.punch.play("default")

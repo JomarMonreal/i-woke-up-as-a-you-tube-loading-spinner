@@ -27,6 +27,7 @@ enum Timing {
 @onready var music: AudioStreamPlayer2D = $GameplayMusic
 @onready var error_sfx: AudioStreamPlayer2D = $ErrorSFX
 @onready var monitor_destroyed_sfx: AudioStreamPlayer2D = $MonitorDestroyedSFX
+@onready var game: GameManager = get_tree().get_first_node_in_group("game_manager")
 
 
 @export var is_endless = true
@@ -57,12 +58,12 @@ func reset() -> void:
 	main_ui.punch.play("default")
 	patience_level = max_patience_level
 	main_ui.modulate_base(1 - patience_level)
-	for anomaly in monitor.loading.anomalies_dictionary.values():
-		if is_instance_valid(anomaly):
-			anomaly.queue_free()
-	
 	monitor.endless_iteration = 0
+	if not is_endless and game.current_timeline_index < 5:
+		var timeline = game.story_timelines[game.current_timeline_index]
+		monitor.spawn_config = game.story_mode_config.spawn_configs[timeline]
 	monitor.reset()
+	
 	_previous_monitor_state = null
 	perfect_count = 0
 	good_count = 0

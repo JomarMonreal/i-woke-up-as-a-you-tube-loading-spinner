@@ -1,0 +1,39 @@
+audio music "res://assets/music/sustain2.ogg"
+[background arg="res://assets/backgrounds/scene.png" fade="1.0" wait="true"]
+pause: It’s been 5 days.
+pause: Thanks for your hardwork.
+pablo: I kinda miss my girlfriend...
+pause: I think it’s finally time to finally let you go.
+[wait time="1.0"]
+pablo: No....
+pause: I will play you back to reality.
+pause: Farewell...
+[background arg="res://assets/sprites/black_screen.png" fade="2.0" wait="true"]
+[wait time="1.0"]
+audio "res://assets/music/woosh-sfx.mp3"
+[background arg="res://assets/backgrounds/bench with gf.png" fade="1.0" wait="true"]
+audio music "res://assets/music/happy_sustain.ogg"
+pablo: Oh... I'm back at the station.
+[background arg="res://assets/backgrounds/last.png" fade="0.8" wait="true"]
+angie: Hey, you. You’re finally awake.
+[wait time="1.0"]
+pablo: Angie...
+pablo: Finally...
+pablo: I missed you!
+[wait time="1.0"]
+angie: I'm sorry for my joke last time...
+angie: I missed you too!
+[wait time="1.0"]
+pablo: How long was I missing?
+[wait time="1.0"]
+angie: No…
+angie: You just woke up. I was right here beside you all this time.
+pablo: So, it was all a dream...
+angie: Yes.. it was all a dream.
+[wait time="1.0"]
+angie: Anyway.. we've upgraded our Internet plan yesterday.
+angie: It was very fast!
+audio music "res://assets/music/sustain.ogg"
+[background arg="res://assets/sprites/black_screen.png" fade="0.0"]
+pablo: Wait....
+pablo: Huh?

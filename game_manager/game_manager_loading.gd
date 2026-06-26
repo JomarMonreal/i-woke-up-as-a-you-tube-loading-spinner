@@ -13,5 +13,8 @@ func process(delta: float) -> int:
 
 
 func _on_timer_timeout() -> void:
-	var game_manger := entity as GameManager
-	game_manger.states.change_state(GameManagerState.State.Prototype)
+	var game_manager := entity as GameManager
+	if game_manager.gameplay.monitor.is_endless:
+		game_manager.states.change_state(GameManagerState.State.Prototype)
+	else: 
+		game_manager.states.change_state(GameManagerState.State.Cutscene)

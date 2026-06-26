@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="StoryModeConfig" format=3 uid="uid://bl4b50fx2ljgr"]
+
+[ext_resource type="Script" uid="uid://c66b41eg7uwl5" path="res://story_mode_config.gd" id="1_w3blb"]
+[ext_resource type="Script" uid="uid://cs1vxgarciocd" path="res://objects/monitor/monitor_spawn_config.gd" id="2_3cipe"]
+[ext_resource type="Resource" uid="uid://6g6hk77p3dfj" path="res://configs/level_1.tres" id="3_ikwey"]
+[ext_resource type="Resource" uid="uid://bgfjiuyxqt2b0" path="res://configs/level_2.tres" id="4_3mslm"]
+[ext_resource type="Resource" uid="uid://dlr4m8lrb25a2" path="res://configs/level_3.tres" id="5_ptlq0"]
+[ext_resource type="Resource" uid="uid://c1xjuxgaucdus" path="res://configs/level_4.tres" id="6_1k03r"]
+[ext_resource type="Script" uid="uid://bgjkpf8kwrkoe" path="res://objects/anomaly_spawn_config.gd" id="7_ptlq0"]
+
+[sub_resource type="Resource" id="Resource_sovu8"]
+script = ExtResource("7_ptlq0")
+count = 4
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[sub_resource type="Resource" id="Resource_t555r"]
+script = ExtResource("7_ptlq0")
+count = 5
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[sub_resource type="Resource" id="Resource_xraia"]
+script = ExtResource("7_ptlq0")
+count = 4
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[sub_resource type="Resource" id="Resource_0wwyu"]
+script = ExtResource("7_ptlq0")
+count = 6
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[sub_resource type="Resource" id="Resource_cgvih"]
+script = ExtResource("7_ptlq0")
+count = 6
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[sub_resource type="Resource" id="Resource_jk1qb"]
+script = ExtResource("2_3cipe")
+spawn_configs = Array[ExtResource("7_ptlq0")]([SubResource("Resource_sovu8"), SubResource("Resource_t555r"), SubResource("Resource_xraia"), SubResource("Resource_0wwyu"), SubResource("Resource_cgvih")])
+metadata/_custom_type_script = "uid://cs1vxgarciocd"
+
+[resource]
+script = ExtResource("1_w3blb")
+spawn_configs = Dictionary[String, ExtResource("2_3cipe")]({
+"day_1": ExtResource("3_ikwey"),
+"day_2": ExtResource("4_3mslm"),
+"day_3": ExtResource("5_ptlq0"),
+"day_4": ExtResource("6_1k03r"),
+"day_45": SubResource("Resource_jk1qb")
+})
+metadata/_custom_type_script = "uid://c66b41eg7uwl5"

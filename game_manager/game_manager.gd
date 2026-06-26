@@ -3,6 +3,11 @@ class_name GameManager
 
 @onready var states: GameManagerStateManager = $StateManager
 @onready var gameplay: Gameplay = $StateManager/Prototype/Gameplay
+@export var story_mode_config: StoryModeConfig
+
+var story_timelines = ["day_1","day_2","day_3","day_4","day_45"]
+var has_watched_cutscenes: Array[bool] = [false, false, false, false, false]
+var current_timeline_index = 0
 
 func _ready() -> void:
 	states.init(self)

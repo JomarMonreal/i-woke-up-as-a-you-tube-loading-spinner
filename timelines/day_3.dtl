@@ -1,0 +1,7 @@
+audio "res://assets/music/sustain2.ogg"
+[background arg="res://assets/backgrounds/gf.png" fade="1.0" wait="true"]
+[wait time="3.0"]
+angie: Pablo...
+[background arg="res://assets/backgrounds/phone.png" fade="1.0" wait="true"]
+[wait time="10.0"]
+angie: Where did you go?

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfeuhsbj71n6r"]
 
 [ext_resource type="PackedScene" uid="uid://w1y6ybc6agoa" path="res://objects/explosion.tscn" id="1_o0bbv"]
-[ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://text_effect.gd" id="1_xucs5"]
+[ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://objects/text_effects/text_effect.gd" id="1_xucs5"]
 [ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="2_xucs5"]
 [ext_resource type="AudioStream" uid="uid://b4dubcgjc63tm" path="res://assets/music/good.wav" id="4_bnk3c"]
 

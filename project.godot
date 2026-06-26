@@ -22,10 +22,22 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
+"angie": "res://characters/angie.dch",
+"pablo": "res://characters/pablo.dch",
+"pause": "res://characters/pause.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
-directories/dtl_directory={}
+directories/dtl_directory={
+"day3": "res://timelines/day3.dtl",
+"day_1": "res://timelines/day_1.dtl",
+"day_2": "res://timelines/day_2.dtl",
+"day_3": "res://timelines/day_3.dtl",
+"day_4": "res://timelines/day_4.dtl",
+"day_45": "res://timelines/day_45.dtl",
+"day_5": "res://timelines/day_5.dtl"
+}
 layout/style_directory={}
+glossary/default_case_sensitive=true
 
 [display]
 

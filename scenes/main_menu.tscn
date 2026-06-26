@@ -46,10 +46,8 @@ Button/colors/font_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("7_jk1qb")
 
-[node name="MainMenu" type="CanvasLayer" unique_id=107323356 node_paths=PackedStringArray("start_button", "exit")]
+[node name="MainMenu" type="CanvasLayer" unique_id=107323356]
 script = ExtResource("1_06t4h")
-start_button = NodePath("Control/VBoxContainer/Story")
-exit = NodePath("Control/VBoxContainer/Endless")
 
 [node name="Control" type="Control" parent="." unique_id=628823209]
 layout_mode = 3

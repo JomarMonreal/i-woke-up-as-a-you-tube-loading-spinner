@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://c8dkfrcrvlalt"]
+
+[ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="1_0bpdh"]
+[ext_resource type="Script" uid="uid://blil0t26hu260" path="res://scenes/credits.gd" id="1_0ctdu"]
+[ext_resource type="AudioStream" uid="uid://d3kytmlhs8lml" path="res://assets/music/main_loading.ogg" id="2_2ckv8"]
+
+[sub_resource type="Animation" id="Animation_2ckv8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CanvasLayer/Control:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/CanvasLayer/Control:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/CanvasLayer/Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/CanvasLayer/Label2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_0ctdu"]
+resource_name = "credits"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CanvasLayer/Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(600, 1200), Vector2(600, -800)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("AnimationPlayer/CanvasLayer/Control:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 648)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/CanvasLayer/Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(10.005, 10.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/CanvasLayer/Label2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(10.865, 11.025),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fbfq"]
+_data = {
+&"RESET": SubResource("Animation_2ckv8"),
+&"credits": SubResource("Animation_0ctdu")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_8gwij"]
+font = ExtResource("1_0bpdh")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_02mon"]
+font = ExtResource("1_0bpdh")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ctdu"]
+font = ExtResource("1_0bpdh")
+font_size = 25
+
+[node name="AnimationPlayer" type="AnimationPlayer" unique_id=275722382]
+libraries/ = SubResource("AnimationLibrary_2fbfq")
+autoplay = &"credits"
+speed_scale = 0.5
+script = ExtResource("1_0ctdu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1404872359]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=2036147828]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 600.0
+offset_top = -800.0
+offset_right = -552.0
+offset_bottom = -1448.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1977778004]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=1186638602]
+layout_mode = 2
+text = "Programmer:
+Noromon"
+label_settings = SubResource("LabelSettings_8gwij")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=240458711]
+layout_mode = 2
+text = "Art and Illustrations:
+Noromon"
+label_settings = SubResource("LabelSettings_8gwij")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=911179818]
+layout_mode = 2
+text = "Music and SFX:
+Noromon"
+label_settings = SubResource("LabelSettings_8gwij")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=1739763051]
+layout_mode = 2
+text = "Story:
+Noromon"
+label_settings = SubResource("LabelSettings_8gwij")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2110792906]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Thank you for playing!"
+label_settings = SubResource("LabelSettings_02mon")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1058074421]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -68.0
+offset_right = 410.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -125)
+text = "Press any key to exit"
+label_settings = SubResource("LabelSettings_0ctdu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1489711732]
+stream = ExtResource("2_2ckv8")
+autoplay = true
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

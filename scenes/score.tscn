@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://clns14ufqdwef"]
 
 [ext_resource type="PackedScene" uid="uid://byxjs1o8vkahh" path="res://objects/text_effects/late.tscn" id="1_lew60"]
-[ext_resource type="Script" uid="uid://byc1k5okob4xl" path="res://scenes/score.gd" id="1_x4ir2"]
+[ext_resource type="Script" uid="uid://byc1k5okob4xl" path="res://score.gd" id="1_x4ir2"]
 [ext_resource type="PackedScene" uid="uid://3gdi21vv2edi" path="res://objects/text_effects/early.tscn" id="2_68bkv"]
 [ext_resource type="PackedScene" uid="uid://dfeuhsbj71n6r" path="res://objects/text_effects/good.tscn" id="3_xcjqx"]
 [ext_resource type="PackedScene" uid="uid://bi5jgo5sbh5ew" path="res://objects/text_effects/perfect.tscn" id="4_3eqfp"]
-[ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://text_effect.gd" id="4_x4ir2"]
+[ext_resource type="Script" uid="uid://b4lua0be1250r" path="res://objects/text_effects/text_effect.gd" id="4_x4ir2"]
 [ext_resource type="PackedScene" uid="uid://w1y6ybc6agoa" path="res://objects/explosion.tscn" id="5_7w2o3"]
 [ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="6_4qrk4"]
 [ext_resource type="AudioStream" uid="uid://cpelha0gqltdg" path="res://assets/music/early.wav" id="9_7w2o3"]
-[ext_resource type="AudioStream" uid="uid://cigq1oxcj1x1f" path="res://assets/music/perfect.wav" id="10_4qrk4"]
+[ext_resource type="AudioStream" uid="uid://d03y8h0cokhq" path="res://assets/music/success-chime.mp3" id="10_4qrk4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7w2o3"]
 font = ExtResource("6_4qrk4")
@@ -170,6 +170,7 @@ label_settings = SubResource("LabelSettings_4qrk4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=82387060]
 stream = ExtResource("10_4qrk4")
+volume_db = 5.909
 autoplay = true
 
 [editable path="ScoreLabel"]

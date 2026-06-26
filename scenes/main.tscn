@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dju78ukb6wlmu" path="res://game_manager/game_manager.gd" id="1_tipki"]
 [ext_resource type="Script" uid="uid://bpwknrqltt28b" path="res://game_manager/game_manager_state_manager.gd" id="2_85g3d"]
+[ext_resource type="Resource" uid="uid://bl4b50fx2ljgr" path="res://configs/story_config.tres" id="2_nvyfr"]
 [ext_resource type="Script" uid="uid://b077hbe8kdyva" path="res://game_manager/game_manager_loading.gd" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://4dlydv7w45d2" path="res://scenes/loading.tscn" id="4_ya4ey"]
 [ext_resource type="Script" uid="uid://dvuj3qimtse0n" path="res://game_manager/game_manager_main_menu.gd" id="5_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bc4yli5h2xybd" path="res://assets/sprites/white.png" id="6_5poiv"]
 [ext_resource type="PackedScene" uid="uid://poj2ymoe5det" path="res://scenes/main_menu.tscn" id="6_trceg"]
 [ext_resource type="Script" uid="uid://b71r4j54uha5q" path="res://game_manager/game_manager_prototype.gd" id="7_a8y0u"]
-[ext_resource type="Script" uid="uid://duikujq3i7l74" path="res://scenes/rotating_particles.gd" id="7_cjqg0"]
+[ext_resource type="Script" uid="uid://duikujq3i7l74" path="res://rotating_particles.gd" id="7_cjqg0"]
 [ext_resource type="PackedScene" uid="uid://c6plbgwb8qexb" path="res://scenes/gameplay.tscn" id="8_jkv2x"]
 [ext_resource type="Script" uid="uid://yeq3vgc1jrj3" path="res://game_manager/game_manager_losing.gd" id="9_5he1u"]
 [ext_resource type="Texture2D" uid="uid://cx502pstw3wcq" path="res://assets/sprites/girl_punching/frame0000.png" id="9_c6pm6"]
@@ -46,6 +47,8 @@
 [ext_resource type="Script" uid="uid://beaqxe7vec2cq" path="res://hover_button.gd" id="42_2cjbq"]
 [ext_resource type="FontFile" uid="uid://fxnyh5a738xy" path="res://assets/font/ARCO for OSX.otf" id="42_chjal"]
 [ext_resource type="AudioStream" uid="uid://b4f5wlxmtucce" path="res://assets/music/destroy.wav" id="46_txyw0"]
+[ext_resource type="PackedScene" uid="uid://b7855ymxn4ej8" path="res://scenes/cutscene.tscn" id="47_vc5cj"]
+[ext_resource type="PackedScene" uid="uid://c8dkfrcrvlalt" path="res://scenes/credits.tscn" id="49_ty1g6"]
 
 [sub_resource type="Gradient" id="Gradient_lgwnu"]
 interpolation_mode = 2
@@ -172,6 +175,7 @@ default_font = ExtResource("42_chjal")
 
 [node name="Main" type="Node2D" unique_id=1027041361 groups=["game_manager"]]
 script = ExtResource("1_tipki")
+story_mode_config = ExtResource("2_nvyfr")
 
 [node name="StateManager" type="Node2D" parent="." unique_id=894109473]
 script = ExtResource("2_85g3d")
@@ -268,6 +272,9 @@ hover_color = Color(1, 1, 1, 1)
 
 [node name="DestroyAudio" type="AudioStreamPlayer2D" parent="StateManager/Losing" unique_id=1716408248]
 stream = ExtResource("46_txyw0")
+
+[node name="Cutscene" parent="StateManager" unique_id=149964461 instance=ExtResource("47_vc5cj")]
+credits = ExtResource("49_ty1g6")
 
 [connection signal="timeout" from="StateManager/Loading/Timer" to="StateManager/Loading" method="_on_timer_timeout"]
 [connection signal="pressed_endless" from="StateManager/MainMenu/MainMenu" to="." method="_on_main_menu_pressed_endless"]

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="MonitorSpawnConfig" format=3 uid="uid://c1xjuxgaucdus"]
+
+[ext_resource type="Script" uid="uid://cs1vxgarciocd" path="res://objects/monitor/monitor_spawn_config.gd" id="1_sovu8"]
+[ext_resource type="Script" uid="uid://bgjkpf8kwrkoe" path="res://objects/anomaly_spawn_config.gd" id="2_t555r"]
+
+[sub_resource type="Resource" id="Resource_sovu8"]
+script = ExtResource("2_t555r")
+count = 4
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[sub_resource type="Resource" id="Resource_t555r"]
+script = ExtResource("2_t555r")
+count = 4
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[sub_resource type="Resource" id="Resource_xraia"]
+script = ExtResource("2_t555r")
+count = 4
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[sub_resource type="Resource" id="Resource_0wwyu"]
+script = ExtResource("2_t555r")
+count = 4
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[sub_resource type="Resource" id="Resource_cgvih"]
+script = ExtResource("2_t555r")
+count = 4
+anomaly_keys = Array[int]([1, 3, 2])
+metadata/_custom_type_script = "uid://bgjkpf8kwrkoe"
+
+[resource]
+script = ExtResource("1_sovu8")
+spawn_configs = Array[ExtResource("2_t555r")]([SubResource("Resource_sovu8"), SubResource("Resource_t555r"), SubResource("Resource_xraia"), SubResource("Resource_0wwyu"), SubResource("Resource_cgvih")])

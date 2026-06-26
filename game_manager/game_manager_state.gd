@@ -6,7 +6,8 @@ enum State {
 	Loading,
 	MainMenu,
 	Prototype,
-	Losing
+	Losing,
+	Cutscene
 }
 
 func toggle_state_visibility(state: Node, is_visible: bool) -> void:

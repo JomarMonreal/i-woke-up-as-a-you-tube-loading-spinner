@@ -1,0 +1,12 @@
+audio "res://assets/music/main_menu.ogg"
+[background arg="res://assets/backgrounds/scene.png" fade="1.0" wait="true"]
+pablo: Why is it my girlfriend watches an amogus clip everytime?
+pause: That amogus clip is the only video assigned you.
+pablo: I see...
+pablo: So... each video has a corresponding loading spinner assigned to them?
+pause: That's right.
+pablo: I really wonder why she watches them everyday.
+pablo: I bet she will enjoy Instagram once she created an account there.
+audio "res://assets/music/sirene_1.wav"
+[background arg="res://assets/backgrounds/scene_error.png" fade="1.0" wait="true"]
+pablo: Here we go again...

@@ -1,0 +1,59 @@
+[background arg="res://assets/backgrounds/train.png" fade="1.0" wait="true"]
+pablo: (What do you mean wait faster?)
+[background arg="res://assets/backgrounds/sleep.png" fade="1.0"]
+pablo: *sighs*
+pablo: *slowly falls to sleep*
+[background arg="res://assets/sprites/black_screen.png" fade="1.0"]
+audio music "res://assets/music/sustain.ogg"
+[wait time="2.0"]
+pablo: Huh???
+pablo: Where am I?
+pablo: I can’t move!
+[wait time="2.0"]
+pablo: Oh, I can!
+pablo: But, I’m rotating.
+audio music "res://assets/music/main_menu.ogg"
+[background arg="res://assets/backgrounds/scene.png" fade="1.0" wait="true"]
+pause: Greetings, young man!
+[wait time="1.5"]
+pablo: Wait? How can you speak?
+pause: Let me turn the question back to you.
+pause: How can you speak?
+[background arg="res://assets/backgrounds/pause.png" fade="0.0"]
+pablo: Oh…
+[wait time="1.0"]
+pablo: What have you done to me?
+pablo: This doesn’t make sense.
+pause: Common sense is just a social construct dear. The world you are in right now defies all the logic you have in your world.
+pablo: *sighs deeply*
+[wait time="1.0"]
+pablo: So, where are we?
+pause: We’re in the Universe XPS-dw3033dx where the laws of physics follow the two fundamental forces\: positive and negative forces. The Watchers address these forces as "binaries" that…
+pablo: PAUSE!!
+pause: Yes, that’s my name.
+pablo: NO! I mean... so there are more universes other than us?
+pause: Correct! According to Crow’s Motherboard theory, all universes started from the existence of a flat board called the Mother and birthed all positive and negative forces that made up our existence.
+pablo: Wait… So, if I’m right, does the Internet exist here?
+pause: How did you know it? It’s the portal that connects us to the other universes.
+pablo: (So, we are inside a computer…)
+audio "res://assets/music/sirene_1.wav"
+[background arg="res://assets/backgrounds/scene_error.png" fade="1.0" wait="true"]
+pause: Let’s skip the formalities. You’re Pablo, right? Right now, these light anomalies are escaping the universe. Red, Green. Blue.
+pause: When you combine these lights, they form satisfying colors that satisfy the Watchers. When they escape, they destroy the balance of the universe.
+pablo: So, what do we do?
+pause: Right now, a YouTube video is being delivered by the Universe HCP-dw675shg. These anomalies can only escape when the video is buffering.
+pause: I want you to capture them at that time. Catch them at the right moment when they are just about to escape. It would be hard to catch them too early or too late.
+pablo: So, that’s why I’m a YouTube spinner.
+pause: Please catch them as soon as possible as our Watcher is really impatient. She could destroy our universe very easily.
+pablo: She?
+pablo: God is a woman?
+pause: I’m sending you right now! The Watcher is waiting.
+pablo: Wait! Let me get…
+audio "res://assets/music/woosh-sfx.mp3"
+[background arg="res://assets/backgrounds/watcher.png" fade="1.0" wait="true"]
+pablo: Oh…
+pablo: So, who’s this impatient Watcher?
+pablo: Wait… she looks like my girlfriend.
+pablo: No! She IS my girlfriend.
+[wait time="2.0"]
+[end_timeline]

@@ -1,0 +1,12 @@
+audio music "res://assets/music/main_menu.ogg"
+[background arg="res://assets/backgrounds/pause.png" fade="1.0" wait="true"]
+pause: How’s your job so far?
+pablo: It’s exhausting…
+pause: I get it. A lot of loading spinners had already given up on this job.
+pause: You’re the best one I have right now.
+pablo: Wait, so I’m not the only one?!
+audio "res://assets/music/sirene_1.wav"
+[background arg="res://assets/backgrounds/scene_error.png" fade="1.0" wait="true"]
+[wait time="1.0"]
+pablo: AURGH!!!
+pause: ¡Adiós mi amigo!

@@ -39,9 +39,19 @@ var _accumulated_rotation := 0.0
 func increase_speed(speed: float) -> void:
 	rotation_speed += speed
 
+func clear_all_anomalies() -> void:
+	for child in get_children():
+		if child is Anomaly:
+			child.queue_free()
+	anomalies_dictionary.clear()
+
 func clear_anomaly(anomaly: Anomaly):
 	var sprite_scale = anomaly.sprite_scale
 	var has_been_passed = anomaly.has_been_pased
+	for key in anomalies_dictionary:
+		if anomalies_dictionary[key] == anomaly:
+			anomalies_dictionary.erase(key)
+			break
 	anomaly.clear()
 	if sprite_scale < 0.15:
 		if has_been_passed:
